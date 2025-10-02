@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Unicons Icons -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <title>My Portfolio</title>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">Alexa</a>
+      <ul class="nav__list">
+        <li><a href="#home" class="nav__link">Home</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#skills" class="nav__link">Skills</a></li>
+        <li><a href="#services" class="nav__link">Services</a></li>
+        <li><a href="#portfolio" class="nav__link">Portfolio</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- HOME -->
+    <section class="home section" id="home">
+      <div class="home__container container">
+        <h1>Hi, I'm Alexa 👋</h1>
+        <h2>Frontend Developer</h2>
+        <p>High-level experience in web design and development producing quality work.</p>
+        <a href="#contact" class="btn">Contact Me</a>
+        <div class="home__img">
+          <img src="assets/img/profile.jpg" alt="Profile picture">
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about section" id="about">
+      <div class="about__container container">
+        <img src="assets/img/about.jpg" alt="About me picture">
+        <div class="about__content">
+          <h2>About Me</h2>
+          <p>Web developer with extensive knowledge and years of experience in web technologies, UI/UX design, and delivering quality work.</p>
+          <div class="about__info">
+            <span>08+ Years Experience</span>
+            <span>20+ Projects</span>
+            <span>5+ Companies</span>
+          </div>
+          <a href="assets/pdf/resume.pdf" class="btn" target="_blank">Download CV</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills section" id="skills">
+      <div class="skills__container container">
+        <h2>Skills</h2>
+        <ul>
+          <li>HTML - 90%</li>
+          <li>CSS - 85%</li>
+          <li>JavaScript - 80%</li>
+          <li>React - 95%</li>
+          <li>Backend Development - 70%</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services section" id="services">
+      <h2>Services</h2>
+      <div class="services__grid container">
+        <div class="service">UI/UX Design</div>
+        <div class="service">Frontend Development</div>
+        <div class="service">Backend Development</div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio section" id="portfolio">
+      <h2>Portfolio</h2>
+      <div class="swiper portfolio__container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="assets/img/project1.png" alt="Project 1"></div>
+          <div class="swiper-slide"><img src="assets/img/project2.png" alt="Project 2"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact section" id="contact">
+      <h2>Contact Me</h2>
+      <form class="contact__form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button class="btn" type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 Alexa. All rights reserved.</p>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <!-- Main JS -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
