@@ -154,7 +154,12 @@ body {
     font-weight: var(--font-medium);
     font-size: 2rem;
     cursor: pointer;
-}
+    }
+
+    .nav__menu.show-menu{
+        bottom: 0; /* slide into view */
+    }
+
 }
 
 /* .nav__menu {
