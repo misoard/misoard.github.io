@@ -190,6 +190,7 @@ body {
         bottom: -100%;
         left: 0;
         width: 100%;
+        height: auto; /* adjust automatically */
         background-color: var(--body-color);
         padding: 2rem 1.5rem 4rem;
         box-shadow: 0 -1px 4px rgba(0, 0, 0, .15);
@@ -197,9 +198,13 @@ body {
         transition: .3s;
     }
     .container{
-        max-width: 85%; 
+        width: 100%;
+        max-width: 100%;
+        padding: 0 1rem; /* breathing room without squeezing */
+        margin: 0 auto;
+        /* max-width: 85%; 
         margin-left: var(--mb-1-5); 
-        margin-right: var(--mb-1-5);
+        margin-right: var(--mb-1-5); */
     }
     .nav__toggle{
     color: var(--title-color);
