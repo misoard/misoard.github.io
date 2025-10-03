@@ -297,9 +297,9 @@ body {
   gap: 1.5rem;
 } */
 
-/* .home__data{
+.home__data{
     grid-column: 1/3;
-} */
+}
 
 .home__social {
   display: grid;
@@ -328,8 +328,13 @@ body {
   gap: 1rem;
   justify-content: right;
   /* justify-self: start;  */
-  margin-left: 10rem;   /* 👈 push them slightly in */
+  margin-left: 15rem;   /* 👈 push them slightly in */
 }
+
+  .home__img {
+    justify-self: end;
+    margin-right: 3rem;
+  } 
 
     /* .home__data {
     text-align: left;
