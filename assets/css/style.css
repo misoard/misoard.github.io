@@ -219,7 +219,7 @@ body {
   display: inline;
     color: var(--title-color);
     font-weight: var(--font-medium);
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   cursor: pointer;
 }
 
@@ -231,7 +231,7 @@ body {
     display: none;
     color: var(--title-color);
     font-weight: var(--font-medium);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     cursor: pointer;
 }
 
