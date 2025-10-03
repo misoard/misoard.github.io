@@ -230,10 +230,10 @@ body {
     z-index: 101;
 }
 
-.nav__toggle.show-menu #nav-toggle i {
+.nav-menu.show-menu ~ #nav-toggle i {
   display: none;
 }
-.nav__toggle.show-menu #nav-close {
+.nav-menu.show-menu #nav-close {
   display: inline;
 }
 
