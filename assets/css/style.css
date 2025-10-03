@@ -216,6 +216,7 @@ body {
 }
 
 #nav-close {
+    position: absolute;
   display: none;
 }
 
