@@ -216,8 +216,14 @@ body {
 }
 
 #nav-close {
+    display: none;
     position: absolute;
-  display: none;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--first-color);
+    z-index: 101;
 }
 
 .nav__menu.show-menu #nav-toggle i {
