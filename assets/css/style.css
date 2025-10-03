@@ -137,10 +137,6 @@ body {
   display: none;
 } */
 
-.nav__menu.show-menu {
-  display: block; /* or flex/grid depending on layout */
-}
-
 .nav__list { 
     grid-template-columns: repeat(3, 1fr);
     display: flex; 
@@ -173,6 +169,11 @@ body {
 .nav__close:hover{
     color: var(--first-color-alt);
 }
+
+.nav__menu.show-menu {
+  display: block; /* or flex/grid depending on layout */
+}
+
 
 /* show menu */
 /* .show-menu{
@@ -218,10 +219,10 @@ body {
   display: none;
 }
 
-.nav.show-menu #nav-toggle i {
+.nav__menu.show-menu #nav-toggle i {
   display: none;
 }
-.nav.show-menu #nav-close {
+.nav__menu.show-menu #nav-close {
   display: inline;
 }
 
