@@ -66,14 +66,23 @@
       <div class="home__container container grid">
         <div class="home__content grid">
             <div class="home__social">
+            <!-- Social (left) -->
                 <a href="https://www.linkedin.com/in/mathieu-isoard-ml" target="_blank" class="home__social-icon">
                     <i class="uil uil-linkedin-alt"></i>
                 </a>
                 <a href="mailto:isoard.mathieu@gmail.com" target="_blank" class="home__social-icon">
                     <i class="uil uil-at"></i>
-                    <!-- isoard.mathieu@gmail.com -->
                 </a>
             </div>
+            <!-- Text (middle) -->
+            <div class="home__data">
+                <h1>Mathieu Isoard</h1>
+                <h2>ML Researcher @ CRIION, Freiburg, Germany</h2>
+                <p> Machine learning | Data science | Medical imaging | DevOps | Physics </p>
+                <a href="#contact" class="btn">Contact Me <i class="uil uil-message"></i></a>
+                <a href="assets/files/contact.vcf" class="btn" target="_blank">Export my profile <i class="uil uil-user"></i></a>
+            </div>      
+            <!-- Image (right) -->
             <div class="home__img">
                 <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <mask id="mask0" mask-type="alpha">
@@ -90,11 +99,10 @@
                             <image class="home__blob-img" x="0" y="-30" href="assets/img/about.jpg"/>
                         </g>
                     </svg>
-
                 <!-- <img src="assets/img/about.jpg" alt="Profile picture"> -->
             </div>
         </div>
-            <div>
+            <!-- <div>
             <h1>Mathieu Isoard</h1>
             <h2>ML Researcher @ CRIION, Freiburg, Germany</h2>
             <p> Machine learning | Data science | Medical imaging | DevOps | Physics  </p>
@@ -104,7 +112,8 @@
             <a href="assets/files/contact.vcf" class="btn" target="_blank"> 
                 Export my profile <i class="uil uil-user"></i>
             </a>
-            </div>
+            
+            </div> -->
       </div>
       <div class="home__scroll">
         <a href="#about" class="home__scroll-button button--flex">
@@ -146,7 +155,7 @@
       </div>
     </section>
 
-    <!-- SERVICES -->
+    <!-- SERVICES
     <section class="services section" id="services">
       <h2>Services</h2>
       <div class="services__grid container">
@@ -154,12 +163,12 @@
         <div class="service">Frontend Development</div>
         <div class="service">Backend Development</div>
       </div>
-    </section>
+    </section> -->
 
     <!-- PORTFOLIO -->
     <section class="portfolio section" id="portfolio">
-      <h2>Portfolio</h2>
       <div class="swiper portfolio__container">
+        <h2>Portfolio</h2>
         <div class="swiper-wrapper">
           <div class="swiper-slide"><img src="assets/img/project1.png" alt="Project 1"></div>
           <div class="swiper-slide"><img src="assets/img/project2.png" alt="Project 2"></div>
@@ -170,6 +179,7 @@
 
     <!-- CONTACT -->
     <section class="contact section" id="contact">
+    <div class="container">
       <h2>Contact Me</h2>
       <form class="contact__form">
         <input type="text" placeholder="Your Name" required>
