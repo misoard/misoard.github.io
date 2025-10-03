@@ -231,14 +231,14 @@ body {
     display: none;
     color: var(--title-color);
     font-weight: var(--font-medium);
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
-.nav-menu.show-menu ~ .nav__btns #nav-toggle {
+#nav-menu.show-menu ~ .nav__btns #nav-toggle {
   display: none;
 }
-.nav-menu.show-menu ~ .nav__btns #nav-close {
+#nav-menu.show-menu ~ .nav__btns #nav-close {
   display: inline;
 }
 
