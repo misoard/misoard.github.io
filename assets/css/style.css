@@ -132,7 +132,7 @@ body { font-family: Arial, sans-serif; line-height: 1.6; background: #fdfdfd; co
     color: var(--first-color);
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     .nav__menu{
         position: fixed;
         bottom: -100%;
@@ -145,7 +145,7 @@ body { font-family: Arial, sans-serif; line-height: 1.6; background: #fdfdfd; co
         transition: .3s;
     }
     .container{
-        max-width: 767px; 
+        max-width: 90%; 
         margin-left: var(--mb-1-5); 
         margin-right: var(--mb-1-5);
     }
