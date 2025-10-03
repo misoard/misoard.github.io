@@ -215,25 +215,20 @@ body {
 }
 
 
-#nav-toggle i {
+#nav-toggle {
   display: inline;
+  cursor: pointer;
 }
 
 #nav-close {
     display: none;
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    font-size: 2rem;
     cursor: pointer;
-    color: var(--first-color);
-    z-index: 101;
 }
 
-.nav-menu.show-menu ~ #nav-toggle i {
+.nav-menu.show-menu ~ .nav__btns #nav-toggle {
   display: none;
 }
-.nav-menu.show-menu #nav-close {
+.nav-menu.show-menu ~ .nav__btns #nav-close {
   display: inline;
 }
 
