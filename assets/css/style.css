@@ -149,6 +149,12 @@ body { font-family: Arial, sans-serif; line-height: 1.6; background: #fdfdfd; co
         margin-left: var(--mb-1-5); 
         margin-right: var(--mb-1-5);
     }
+    .nav__toggle{
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
 }
 
 .nav__list { 
