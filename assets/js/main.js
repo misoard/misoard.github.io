@@ -4,12 +4,17 @@ const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
       navClose = document.getElementById('nav-close');
 
-function toggleMenu() {
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('show-menu');
+  });
 }
 
-navToggle.addEventListener('click', toggleMenu);
-navClose.addEventListener('click', toggleMenu);
+if (navClose) {
+  navClose.addEventListener('click', () => {
+    navMenu.classList.remove('show-menu');
+  });
+}
 
 // const navMenu = document.getElementById('nav-menu'),
 //     navToggle = document.getElementById('nav-toggle'),
