@@ -235,6 +235,11 @@ body {
     cursor: pointer;
 }
 
+#nav-close:hover{
+    color: var(--first-color);
+}
+
+
 #nav-menu.show-menu ~ .nav__btns #nav-toggle {
   display: none;
 }
