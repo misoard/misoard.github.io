@@ -226,7 +226,7 @@ body {
     z-index: 101;
 }
 
-.nav__menu.show-menu #nav-toggle i {
+.nav.show-menu #nav-toggle i {
   display: none;
 }
 .nav__menu.show-menu #nav-close {
