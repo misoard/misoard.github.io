@@ -196,11 +196,27 @@ body {
 }
 
 
+#nav-toggle i {
+  display: inline;
+}
+
+#nav-close {
+  display: none;
+}
+
+.nav.show-menu #nav-toggle i {
+  display: none;
+}
+.nav.show-menu #nav-close {
+  display: inline;
+}
+
 /* Sections */
 
 /*==================== REUSABLE CSS CLASSES ====================*/
 .section {
   padding: 2rem 0 4rem;
+scroll-margin-top: 60px; /* same as header height */
 }
 
 .section__title {
