@@ -159,12 +159,16 @@ body {
     font-size: 1.2rem;
 }
 .nav__close{
-    position: absolute;
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    font-size: 1.1rem;
+    cursor: pointer;
+    /* position: absolute;
     right: 1.3rem;
     bottom: .5rem;
     font-size: 1.5rem;
     cursor: pointer;
-    color: var(--first-color);
+    color: var(--first-color); */
 }
 .nav__close:hover{
     color: var(--first-color-alt);
@@ -226,10 +230,10 @@ body {
     z-index: 101;
 }
 
-.nav.show-menu #nav-toggle i {
+.nav__toggle.show-menu #nav-toggle i {
   display: none;
 }
-.nav__menu.show-menu #nav-close {
+.nav__toggle.show-menu #nav-close {
   display: inline;
 }
 
