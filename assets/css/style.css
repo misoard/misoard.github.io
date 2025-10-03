@@ -132,35 +132,6 @@ body {
     color: var(--first-color);
 }
 
-@media screen and (max-width: 768px) {
-    .nav__menu{
-        position: fixed;
-        bottom: -100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--body-color);
-        padding: 2rem 1.5rem 4rem;
-        box-shadow: 0 -1px 4px rgba(0, 0, 0, .15);
-        border-radius: 1.5rem 1.5rem 0 0;
-        transition: .3s;
-    }
-    .container{
-        max-width: 90%; 
-        margin-left: var(--mb-1-5); 
-        margin-right: var(--mb-1-5);
-    }
-    .nav__toggle{
-    color: var(--title-color);
-    font-weight: var(--font-medium);
-    font-size: 2rem;
-    cursor: pointer;
-    }
-
-    .nav__menu.show-menu{
-        bottom: 0; /* slide into view */
-    }
-
-}
 
 /* .nav__menu {
   display: none;
@@ -207,6 +178,36 @@ body {
 /* .show-menu{
     bottom: 0;
 } */
+
+@media screen and (max-width: 768px) {
+    .nav__menu{
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--body-color);
+        padding: 2rem 1.5rem 4rem;
+        box-shadow: 0 -1px 4px rgba(0, 0, 0, .15);
+        border-radius: 1.5rem 1.5rem 0 0;
+        transition: .3s;
+    }
+    .container{
+        max-width: 90%; 
+        margin-left: var(--mb-1-5); 
+        margin-right: var(--mb-1-5);
+    }
+    .nav__toggle{
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    font-size: 2rem;
+    cursor: pointer;
+    }
+
+    .nav__menu.show-menu{
+        bottom: 0; /* slide into view */
+    }
+
+}
 
 
 #nav-toggle i {
