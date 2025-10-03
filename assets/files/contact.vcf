@@ -1,0 +1,16 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Mathieu Isoard
+N:Isoard;Mathieu;;;
+item1.EMAIL;TYPE=INTERNET:isoard.mathieu@gmail.com
+item1.X-ABLabel:INTERNET
+TEL;TYPE=CELL:+33610692015
+ADR;TYPE=HOME:;;;Freiburg;;;DE;Freiburg\nDE
+item2.URL:https\://misoard.github.io/
+item2.X-ABLabel:_$!<HomePage>!$_
+item3.URL:www.linkedin.com/in/mathieu-isoard-ml
+item3.X-ABLabel:LinkedIn
+PHOTO:https://lh3.googleusercontent.com/contacts/AG6tpzEHMUrzRlP-9p0oUMS2OM
+ _W4tbp6w82YiMdfOq-qrL41PrLYUfE
+CATEGORIES:myContacts
+END:VCARD
