@@ -157,6 +157,14 @@ body {
 }
 }
 
+/* .nav__menu {
+  display: none;
+} */
+
+.nav__menu.show-menu {
+  display: block; /* or flex/grid depending on layout */
+}
+
 .nav__list { 
     grid-template-columns: repeat(3, 1fr);
     display: flex; 
