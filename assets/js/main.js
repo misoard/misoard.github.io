@@ -107,17 +107,17 @@ function initSwiper() {
         // Tablet & Desktop Swiper
         swiperInstance = new Swiper(".desktop-swiper", {
             loop: true,
-            cssMode: true,
+            // cssMode: true,
             navigation: {
                 nextEl: ".desktop-swiper .swiper-button-next",
                 prevEl: ".desktop-swiper .swiper-button-prev",
             },
-            pagination: {
-                el: ".desktop-swiper .swiper-pagination",
-                clickable: true,
-            },
-            slidesPerView: 1, // or 3 for desktop
-            spaceBetween: 20,
+            // pagination: {
+            //     el: ".desktop-swiper .swiper-pagination",
+            //     clickable: true,
+            // },
+            // slidesPerView: 1, // or 3 for desktop
+            // spaceBetween: 20,
         });
     }
 }

@@ -583,6 +583,26 @@ position: absolute;
   right: 10px; /* space from the right edge of container */
 }
 
+/* .swiper-portfolio-icon,
+.swiper-portfolio-icon {
+  font-size: 2rem; 
+} */
+
+
+.mobile-swiper { display: block; }
+.desktop-swiper { display: none; }
+
+@media screen and (min-width: 768px) {
+  .mobile-swiper { display: none; }
+  .desktop-swiper { display: block; }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 30px;
+    height: 30px;
+  }
+}
+
 
 /* Style your custom <i> icons */
 /* .swiper-portfolio-icon {
