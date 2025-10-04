@@ -589,12 +589,12 @@ position: absolute;
 } */
 
 
-.mobile-swiper { display: block; }
+.mobile-swiper { display: flex; }
 .desktop-swiper { display: none; }
 
 @media screen and (min-width: 768px) {
   .mobile-swiper { display: none; }
-  .desktop-swiper { display: block; }
+  .desktop-swiper { display: flex; }
 
   .swiper-button-prev,
   .swiper-button-next {
