@@ -258,6 +258,8 @@ body {
     max-width: 100%;
     padding: 0 1rem; 
     margin: 0 auto;
+    height: 100vh; /* lock it to exactly one screen on desktops */
+
 }
 
 .section__title {
@@ -469,7 +471,6 @@ flex-direction: column;
 .about { 
     text-align: left; 
     /* padding-top: 120px;  */
-    height: 100vh; /* lock it to exactly one screen on desktops */
     /* background: url("../img/header_image.png") no-repeat center center/cover; */
 }
 
@@ -489,9 +490,6 @@ flex-direction: column;
 
 
 /* Skills */
-/* .skills{
-    margin: 10px;
-} */
 
 .skills ul { list-style: none; }
 .skills li { margin: 10px 0; }
@@ -509,10 +507,6 @@ flex-direction: column;
 
 
 /* Portfolio */
-
-/* .portfolio{
-    margin: 10px;
-} */
 
 .portfolio__container {
     overflow: initial;
@@ -555,11 +549,6 @@ flex-direction: column;
 
 }
 
-/* Completely disable Swiper default arrows */
-/* .swiper-button-prev::after,
-.swiper-button-next::after {
-  content: '';
-} */
 
 .swiper-button-next,
 .swiper-button-prev {
@@ -575,41 +564,22 @@ position: absolute;
   z-index: 10;
 }
 
-/* .swiper-button-prev {
-  left: -10px; 
+.swiper-horizontal > .swiper-pagination-bullets{
+    bottom: -2.5rem;
 }
 
-.swiper-button-next {
-  right: 10px; 
-} */
-
-/* .swiper-portfolio-icon,
-.swiper-portfolio-icon {
-  font-size: 2rem; 
-} */
+.swiper-pagination-bullet-active{
+    background-color: var(--first-color);
+}
 
 
-/* .mobile-swiper { display: flex; }
-.desktop-swiper { display: none; }
+/* Publications*/
 
-@media screen and (min-width: 768px) {
-  .mobile-swiper { display: none; }
-  .desktop-swiper { display: flex; }
-
-  .swiper-button-prev,
-  .swiper-button-next {
-    width: 30px;
-    height: 30px;
-  }
-} */
-
-
-/* Style your custom <i> icons */
-/* .swiper-portfolio-icon {
-  font-size: 2rem;
-  color: var(--first-color);
-  pointer-events: none;
-} */
+.publications__container {
+    overflow: initial;
+    padding: 0 1rem; 
+    position: relative;  
+}
 
 
 /* Contact */
