@@ -238,11 +238,11 @@ body {
 
 /*==================== REUSABLE CSS CLASSES ====================*/
 .section {
-  padding: 2rem 0 4rem;
+  /* padding: 2rem 0 4rem; */
     scroll-margin-top: 60px; /* same as header height */
     width: 100%;
     max-width: 100%;
-    /* padding: 0 1rem; breathing room without squeezing */
+    padding: 0 1rem; 
     margin: 0 auto;
 }
 
@@ -268,8 +268,6 @@ body {
     text-align: center; 
     padding-top: 120px; 
     height: 100vh; /* lock it to exactly one screen on desktops */
-    max-width: 100%;
-
     /* background: url("../img/header_image.png") no-repeat center center/cover; */
 }
 
