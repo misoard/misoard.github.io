@@ -59,76 +59,75 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 
 /*==================== PORTFOLIO SWIPER  ====================*/
 
-// let swiper = new Swiper(".swiper-container", {
-//     // slidesPerView: "auto",
-//     // centeredSlides: true,
-//     // spaceBetween: 30,
-//     loop: true, 
-
-//     cssMode: true,
-//             spaceBetween: 10,
-//             navigation: {
-//             nextEl: ".swiper-button-next",
-//             prevEl: ".swiper-button-prev",
-//         },
-//         pagination: {
-//             el: ".swiper-pagination",
-//             clickable: true
-//         },
-
-
-//     //   mousewheel: true,
-//     //   keyboard: true,
-//     });
-
-let swiperInstance;
-
-function initSwiper() {
-    // Destroy previous instance if it exists
-    if (swiperInstance) swiperInstance.destroy(true, true);
-
-    if (window.innerWidth <= 768) {
-        // Mobile Swiper
-        swiperInstance = new Swiper(".mobile-swiper", {
-            loop: true,
-            cssMode: true,
-            navigation: {
-                nextEl: ".mobile-swiper .swiper-button-next",
-                prevEl: ".mobile-swiper .swiper-button-prev",
-            },
-            pagination: {
-                el: ".mobile-swiper .swiper-pagination",
-                clickable: true,
-            },
-            slidesPerView: 1,
+let swiper = new Swiper(".swiper-container", {
+    // slidesPerView: "auto",
+    // centeredSlides: true,
+    // spaceBetween: 30,
+    loop: true, 
+    cssMode: true,
             spaceBetween: 10,
-        });
-    } else {
-        // Tablet & Desktop Swiper
-        swiperInstance = new Swiper(".desktop-swiper", {
-            loop: true,
-            // cssMode: true,
             navigation: {
-                nextEl: ".desktop-swiper .swiper-button-next",
-                prevEl: ".desktop-swiper .swiper-button-prev",
-            },
-            // pagination: {
-            //     el: ".desktop-swiper .swiper-pagination",
-            //     clickable: true,
-            // },
-            // slidesPerView: 1, // or 3 for desktop
-            // spaceBetween: 20,
-        });
-    }
-}
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+        },
 
-// Initialize on page load
-initSwiper();
 
-// Re-initialize on window resize
-window.addEventListener("resize", () => {
-    initSwiper();
-});
+    //   mousewheel: true,
+    //   keyboard: true,
+    });
+
+// let swiperInstance;
+
+// function initSwiper() {
+//     // Destroy previous instance if it exists
+//     if (swiperInstance) swiperInstance.destroy(true, true);
+
+//     if (window.innerWidth <= 768) {
+//         // Mobile Swiper
+//         swiperInstance = new Swiper(".mobile-swiper", {
+//             loop: true,
+//             cssMode: true,
+//             navigation: {
+//                 nextEl: ".mobile-swiper .swiper-button-next",
+//                 prevEl: ".mobile-swiper .swiper-button-prev",
+//             },
+//             pagination: {
+//                 el: ".mobile-swiper .swiper-pagination",
+//                 clickable: true,
+//             },
+//             slidesPerView: 1,
+//             spaceBetween: 10,
+//         });
+//     } else {
+//         // Tablet & Desktop Swiper
+//         swiperInstance = new Swiper(".desktop-swiper", {
+//             loop: true,
+//             // cssMode: true,
+//             navigation: {
+//                 nextEl: ".desktop-swiper .swiper-button-next",
+//                 prevEl: ".desktop-swiper .swiper-button-prev",
+//             },
+//             // pagination: {
+//             //     el: ".desktop-swiper .swiper-pagination",
+//             //     clickable: true,
+//             // },
+//             // slidesPerView: 1, // or 3 for desktop
+//             // spaceBetween: 20,
+//         });
+//     }
+// }
+
+// // Initialize on page load
+// initSwiper();
+
+// // Re-initialize on window resize
+// window.addEventListener("resize", () => {
+//     initSwiper();
+// });
 
 
 

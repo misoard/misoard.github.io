@@ -589,7 +589,7 @@ position: absolute;
 } */
 
 
-.mobile-swiper { display: flex; }
+/* .mobile-swiper { display: flex; }
 .desktop-swiper { display: none; }
 
 @media screen and (min-width: 768px) {
@@ -601,7 +601,7 @@ position: absolute;
     width: 30px;
     height: 30px;
   }
-}
+} */
 
 
 /* Style your custom <i> icons */
