@@ -338,6 +338,10 @@ flex-direction: column;
     justify-self: end;
     margin-right: 3rem;
   } 
+
+  .home__data{
+    margin-right: auto;
+}
   
 }
 
