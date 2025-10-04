@@ -575,13 +575,13 @@ position: absolute;
   z-index: 10;
 }
 
-.swiper-button-prev {
-  left: -10px; /* space from the left edge of container */
+/* .swiper-button-prev {
+  left: -10px; 
 }
 
 .swiper-button-next {
-  right: 10px; /* space from the right edge of container */
-}
+  right: 10px; 
+} */
 
 /* .swiper-portfolio-icon,
 .swiper-portfolio-icon {
