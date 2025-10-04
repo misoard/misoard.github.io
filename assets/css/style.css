@@ -367,6 +367,12 @@ body {
         bottom: 0; /* slide into view */
     }
 
+    .home__content{
+    grid-template-columns: 0.5fr 3fr;
+    padding-top: 3.5rem;
+    align-items: center;
+}
+
     .home__data{
     grid-column: 1/3;
 }
