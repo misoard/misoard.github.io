@@ -306,7 +306,7 @@ body {
   grid-template-columns: max-content;
   align-items: center;
   row-gap: 1rem;
-flex-direction: column;
+    flex-direction: column;
   gap: .5rem;
   justify-content: right;
   /* justify-self: start;  */
@@ -430,6 +430,8 @@ flex-direction: column;
 }
 
 
+
+
 .home__scroll-button{
     color: var(--first-color);
     transition: .3s;
@@ -437,6 +439,7 @@ flex-direction: column;
 .home__scroll-button:hover{
     transform: translateY(.4rem);
 }
+
 .home__scroll-mouse{
     font-size: 2.5rem;
 }
@@ -531,6 +534,16 @@ flex-direction: column;
 
 .portfolio__content{
     padding: 0 1.5rem;
+    grid-template-columns: 1fr 1fr; /* left, middle, right */
+}
+
+@media screen and (max-width: 768px) {
+
+.portfolio__content{
+    padding: 0 1.5rem;
+    grid-template-columns: 1fr; /* left, middle, right */
+}
+
 }
 
 
@@ -578,6 +591,51 @@ position: absolute;
 .swiper-pagination-bullet-active{
     background-color: var(--first-color);
 }
+
+.portfolio{
+    position: relative;
+}
+
+.home__scroll.portfolio {
+    position: absolute;
+    bottom: 4rem;
+    right: 2rem;
+}
+
+/* .home__scroll.portfolio{
+    margin-left: 70%;
+ }  */
+
+/* .swiper-pagination{
+    margin-bottom: 3rem;
+} */
+
+/* .home__scroll.portfolio{
+    margin-top: -2rem;
+    float: right;
+    
+}
+
+    
+/* .home__scroll-button.portfolio{
+    float: right;
+    
+}
+.button--flex.portfolio{
+    float: right;
+}
+.home__scroll-arrow.portfolio{
+    float: right;
+}
+.home__scroll-mouse.portfolio{
+    float: right;
+}
+.home__scroll-name.portfolio{
+    float: right;
+} */
+
+
+
 
 
 /* Publications*/
