@@ -302,7 +302,7 @@ flex-direction: column;
 } */
 
   .home__content {
-    grid-template-columns: max-content max-content max-content; /* left, middle, right */
+    grid-template-columns: 0.5fr max-content max-content; /* left, middle, right */
     align-items: center; /* vertically center */
     column-gap: 2rem;
     padding-top: 1rem;
@@ -313,6 +313,7 @@ flex-direction: column;
 .home__data{
     grid-column: 3/4;
 }
+
 
 
 @media screen and (min-width: 768px) {
@@ -339,9 +340,9 @@ flex-direction: column;
     margin-right: 3rem;
   } 
 
-  /* .home__data{
-    margin-right: auto;
-} */
+  .home__data{
+    max-width: 100%;
+}
   
 }
 
