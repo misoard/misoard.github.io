@@ -267,13 +267,15 @@ body {
 
 .section__subtitle {
   display: block;
-  font-size: var(--small-font-size);
+  font-size: var(--h3-font-size);
   margin-bottom: var(--mb-3);
 }
 
 .section__title, 
 .section__subtitle {
-  text-align: center;
+    text-align: left;
+    padding: 0 1rem; /* breathing room without squeezing */
+
 }
 
 /* Home */
@@ -330,34 +332,12 @@ flex-direction: column;
 
 @media screen and (min-width: 768px) {
 
-    /* .home {
-  } */
-
-  /* .home__content {
-    grid-template-columns: 0.5fr max-content max-content; 
-    align-items: center; 
-    column-gap: 2rem;
-  } */
-
-  /* .home__social {
-  flex-direction: column;
-  gap: .5rem;
-  justify-content: right;
-  margin-left: 0rem;  
-  margin-bottom: 3rem;
-} */
 
   .home__img {
     justify-self: end;
     margin-right: 3rem;
   } 
  
-  /* .home__data{
-      grid-column: auto; 
-    /* margin-right: auto;
-    width: 100%;
-    word-wrap: break-word;  
-  }  */
    
 }
 
@@ -461,9 +441,6 @@ flex-direction: column;
     font-size: 1.5rem;
 }
 
-.about__container { display: flex; gap: 2rem; align-items: center; }
-.about__container img { width: 250px; border-radius: 20px; }
-
 /* Buttons */
 .btn { 
     display: inline-block; 
@@ -485,6 +462,31 @@ flex-direction: column;
     display: inline-flex;
     align-items: center;
 }
+
+
+/* about */
+
+.about { 
+    text-align: left; 
+    /* padding-top: 120px;  */
+    height: 100vh; /* lock it to exactly one screen on desktops */
+    /* background: url("../img/header_image.png") no-repeat center center/cover; */
+}
+
+.about__content { 
+    justify-content: left;
+}
+
+.about__container { 
+    display: grid; 
+    gap: 2rem; 
+    align-items: center; 
+}
+.about__container img {
+    width: 250px; 
+    border-radius: 20px; 
+}
+
 
 /* Skills */
 /* .skills{
@@ -513,16 +515,82 @@ flex-direction: column;
 } */
 
 .portfolio__container {
-    width: 100%;
+    overflow: initial;
+    padding: 0 1rem; 
+    position: relative;
+
+    /* width: 100%;
     max-width: 100%;
-    padding: 0 1rem; /* breathing room without squeezing */
-    margin: 0px auto;
+    margin: 0px auto; */
     /* width: 100%; 
     max-width: 800px; 
     margin: auto;  */
     
 }
-.portfolio img { width: 100%; border-radius: 10px; }
+
+.portfolio__content{
+    padding: 0 1.5rem;
+}
+
+
+.portfolio img { 
+    width: 500px; 
+    max-width: 100%;
+    border-radius: .5rem; 
+    justify-self: center;
+    position: relative;
+}
+
+.portfolio__title{
+    font-size: var(--h3-font-size);
+    /* margin-bottom: var(--mb-0-5); */
+}
+
+.portfolio__description{
+    margin-bottom: var(--mb-0-25);
+}
+
+.portfolio__button:hover .btn__icon{
+    transform: translateX(.25rem);
+
+}
+
+/* Completely disable Swiper default arrows */
+/* .swiper-button-prev::after,
+.swiper-button-next::after {
+  content: '';
+} */
+
+.swiper-button-next,
+.swiper-button-prev {
+position: absolute;
+  top: 50%; /* vertical center */
+  transform: translateY(-300%); /* adjust exact middle */
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--first-color);
+  z-index: 10;
+}
+
+.swiper-button-prev {
+  left: -10px; /* space from the left edge of container */
+}
+
+.swiper-button-next {
+  right: 10px; /* space from the right edge of container */
+}
+
+
+/* Style your custom <i> icons */
+/* .swiper-portfolio-icon {
+  font-size: 2rem;
+  color: var(--first-color);
+  pointer-events: none;
+} */
+
 
 /* Contact */
 .contact__form { display: flex; flex-direction: column; gap: 1rem; max-width: 500px; margin: auto; }

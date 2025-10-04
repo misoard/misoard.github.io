@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 
   <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
@@ -128,9 +128,9 @@
     <!-- ABOUT -->
     <section class="about section" id="about">
       <div class="about__container container">
-        <img src="assets/img/about.jpg" alt="About me picture">
+        <!-- <img src="assets/img/about.jpg" alt="About me picture"> -->
+        <h2>About Me</h2>
         <div class="about__content">
-          <h2>About Me</h2>
           <p>Web developer with extensive knowledge and years of experience in web technologies, UI/UX design, and delivering quality work.</p>
           <div class="about__info">
             <span>08+ Years Experience</span>
@@ -156,26 +156,52 @@
       </div>
     </section>
 
-    <!-- SERVICES
-    <section class="services section" id="services">
-      <h2>Services</h2>
-      <div class="services__grid container">
-        <div class="service">UI/UX Design</div>
-        <div class="service">Frontend Development</div>
-        <div class="service">Backend Development</div>
-      </div>
-    </section> -->
-
     <!-- PORTFOLIO -->
     <section class="portfolio section" id="portfolio">
-      <div class="swiper portfolio__container">
-        <h2>Portfolio</h2>
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="assets/img/project1.png" alt="Project 1"></div>
-          <div class="swiper-slide"><img src="assets/img/project2.png" alt="Project 2"></div>
+        <h2 class="portfolio__container">Portfolio</h2>
+        <span class="section__subtitle">Most recent work</span>
+        <div class="portfolio__container container mobile-swiper ">
+            <div class="swiper-wrapper">
+                <!-- PORTFOLIO 1 -->
+                <div class="portfolio__content grid swiper-slide">
+                    <img src="assets/img/header_image.png" alt="" class="portfolio__img">
+                    <div class="portfolio__data">
+                        <h3 class="portfolio__title"> AI in physics</h3>
+                        <p class="portfolio__description">
+                            smth to describe the project
+                        </p>
+                        <a href="#" class="btn button--flex button--small portfolio__button">
+                            Demo
+                            <i class="uil uil-arrow-right btn__icon"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PORTFOLIO 2 -->
+                <div class="portfolio__content grid swiper-slide">
+                    <img src="assets/img/header_image.png" alt="" class="portfolio__img">
+                    <div class="portfolio__data">
+                        <h3 class="portfolio__title"> AI in physics</h3>
+                        <p class="portfolio__description">
+                            smth to describe the project
+                        </p>
+                        <a href="#" class="btn button--flex button--small portfolio__button">
+                            Demo
+                            <i class="uil uil-arrow-right btn__icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+             <div class="swiper-button-next">
+                <!-- <i class="uil uil-angle-double-right swiper-portfolio-icon"></i> -->
+            </div>
+            <div class="swiper-button-prev">
+                <!-- <i class="uil uil-angle-double-left swiper-portfolio-icon"></i> -->
+            </div>
+            <div class="swiper-pagination"></div> 
         </div>
-        <div class="swiper-pagination"></div>
-      </div>
+
     </section>
 
     <!-- CONTACT -->
@@ -197,7 +223,7 @@
   </footer>
 
   <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="assets/js/swiper-bundle.min.js"></script>
   <!-- Main JS -->
   <script src="assets/js/main.js"></script>
 </body>
