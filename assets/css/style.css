@@ -302,7 +302,7 @@ flex-direction: column;
 } */
 
   .home__content {
-    grid-template-columns: 0.5fr max-content max-content; /* left, middle, right */
+    grid-template-columns: max-content max-content max-content; /* left, middle, right */
     align-items: center; /* vertically center */
     column-gap: 2rem;
     padding-top: 1rem;
@@ -339,9 +339,9 @@ flex-direction: column;
     margin-right: 3rem;
   } 
 
-  .home__data{
+  /* .home__data{
     margin-right: auto;
-}
+} */
   
 }
 
