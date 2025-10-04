@@ -168,11 +168,13 @@ body {
 } */
 
 .nav__list { 
-    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(4,1fr); */
     display: flex; 
     list-style: none; 
     gap: 2rem; 
 }
+
+
 .nav__link { 
     display: flex;
     flex-direction: column;
@@ -205,7 +207,7 @@ body {
 }
 
 .nav__menu.show-menu {
-  display: block; /* or flex/grid depending on layout */
+  display: flex; /* or flex/grid depending on layout */
 }
 
 
@@ -367,6 +369,11 @@ flex-direction: column;
     .nav__menu.show-menu{
         bottom: 0; /* slide into view */
     }
+
+    .nav__list { 
+    grid-template-columns: repeat(4,1fr);
+    display: grid; 
+}
 
     .home__content{
     grid-template-columns: 0.5fr 3fr;
