@@ -287,7 +287,7 @@ body {
   grid-template-columns: max-content;
   align-items: center;
   row-gap: 1rem;
-    flex-direction: column;
+flex-direction: column;
   gap: .5rem;
   justify-content: right;
   /* justify-self: start;  */
@@ -341,7 +341,6 @@ body {
   
 }
 
-
 @media screen and (max-width: 768px) {
     .nav__menu{
         position: fixed;
@@ -378,6 +377,41 @@ body {
 }
 
 }
+
+
+/*========== Tablet Devices ==========*/
+@media screen and (min-width: 768px) and (max-width: 967px) {
+    
+  /* Example: keep things balanced */
+  .home__content {
+    grid-template-columns: 1fr 1fr; /* 2 even columns for tablets */
+    align-items: center;
+    column-gap: 1.5rem;
+    padding-top: 2rem;
+  }
+
+  .home__data {
+    grid-column: 2 / 3; /* move data to the right column */
+  }
+
+  .home__img {
+    justify-self: center;
+    width: 180px;
+    margin: 0 auto;
+  }
+
+  .nav__menu {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .nav__link {
+    font-size: var(--normal-font-size);
+  }
+}
+
+
 
 .home__social-icon {
   display: flex;
