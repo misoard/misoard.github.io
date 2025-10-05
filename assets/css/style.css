@@ -485,17 +485,33 @@ body {
 }
 
 .about__content { 
-    justify-content: left;
+      text-align: justify;
+    text-justify: inter-word; /* improves spacing between words */
+    line-height: 1.6;         /* makes text more readable */
+    font-size: var(--h3-font-size);
+    display: grid;
+    gap: 1rem;
 }
 
 .about__container { 
     display: grid; 
     gap: 2rem; 
     align-items: center; 
+    grid-template-columns: 1fr 1fr;
+    margin-top: 1.5rem;
 }
 .about__container img {
-    width: 250px; 
+    width: 500px; 
     border-radius: 20px; 
+        justify-self: center;
+    position: relative;
+    margin-bottom: 5rem;
+}
+
+.about__end{
+display: grid;
+grid-template-columns: 0.5fr 1fr;
+column-gap: 12rem;
 }
 
 
@@ -503,6 +519,10 @@ body {
 
 .skills ul { list-style: none; }
 .skills li { margin: 10px 0; }
+
+.skills__container{
+    font-size: var(--h3-font-size);
+}
 
 /* Services */
 .services__grid { display: flex; gap: 1rem; }
