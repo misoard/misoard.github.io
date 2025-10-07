@@ -216,14 +216,34 @@
                 <!-- PORTFOLIO 1 -->
                 <div class="portfolio__content grid swiper-slide">
                     <img src="assets/img/dataset_alignment.png" alt="" class="portfolio__img">
-                    <div class="portfolio__data">
+                    <div class="portfolio__data text-box">
                         <h3 class="portfolio__title"> Domain shifts mitigation in medical cell datasets </h3>
-                        <p class="portfolio__description">
+                        <div class="portfolio__description">
+                            <!-- <p>
+                            Classifying single-cell images across datasets collected 
+                            under varying imaging conditions remains a fundamental 
+                            challenge in computational cytology. 
+                            </p>
+                            <p>
+                            Different acquisition devices and experimental conditions
+                            introduce domain shifts making it difficult to transfer 
+                            trained models to new dataset. On top of that, most of the 
+                            time, only a few annotated cell samples from different 
+                            sources are avaliable. 
+                            </p> -->
+                            <p>
+                            We propose in this project a new pipeline that relies
+                            on pretrained foundation models augmented with a 
+                            preprocessing method to "re-align" medical cell datasets
+                            coming from different sources. This novel
+                            approach greatly improves generalization across data and 
+                            enhances cell classification results. 
+                            </p>
                             <!-- smth to describe the project -->
-                        </p>
-                        <a href="#" class="btn button--flex button--small portfolio__button">
-                            To the paper
-                            <i class="uil uil-arrow-right btn__icon"></i>
+                        </div>
+                        <a href="#portfolio" class="btn button--flex button--small portfolio__button">
+                            paper in progress...
+                            <!-- <i class="uil uil-arrow-right btn__icon"></i> -->
                         </a>
                     </div>
                 </div>
@@ -232,12 +252,22 @@
                 <!-- PORTFOLIO 2 -->
                 <div class="portfolio__content grid swiper-slide">
                     <img src="assets/img/cmi_competition_kaggle.png" alt="" class="portfolio__img">
-                    <div class="portfolio__data">
+                    <div class="portfolio__data text-box">
                         <h3 class="portfolio__title"> CMI sensors | Kaggle competition</h3>
-                        <p class="portfolio__description">
-                            <!-- smth to describe the project -->
-                        </p>
-                        <a href="#" class="btn button--flex button--small portfolio__button">
+                        <div class="portfolio__description">
+                            <p>
+                            A challenge proposed by the Child Mind Institute and 
+                            the Healthy Brain Network. The goal was to detect 
+                            repetitive gesture behaviors from time series sensor 
+                            acquired by a wrist-worn device. These behaviors are 
+                            connected to obsessive-compulsive disorder (OCD), and 
+                            thus represent key indicators of mental health challenges.
+                            </p>
+                            <p style="margin-top: 1rem;">
+                                <strong> Results: 186th (2657 teams)</strong> 
+                            </p>
+                        </div>
+                        <a href="https://github.com/misoard/CMISensor" class="btn button--flex button--small portfolio__button">
                             <i class="uil uil-github" style="font-size: 1.25rem;"></i> 
                             &nbsp; Github
                             <i class="uil uil-arrow-right btn__icon"></i>
@@ -248,12 +278,23 @@
                 <!-- PORTFOLIO 3 -->
                 <div class="portfolio__content grid swiper-slide">
                     <img src="assets/img/AI_quantum_computing.png" alt="" class="portfolio__img">
-                    <div class="portfolio__data">
+                    <div class="portfolio__data text-box">
                         <h3 class="portfolio__title"> AI and Quantum Computing</h3>
-                        <p class="portfolio__description">
-                            <!-- smth to describe the project -->
-                        </p>
-                        <a href="#" class="btn button--flex button--small portfolio__button">
+                        <div class="portfolio__description">
+                            Is it possible to build a quantum computer with light? Yes. 
+                            Is it better than a classical computer?                          
+                            <p>
+                            In principle, yes! 
+                            But, there is a <em>condition</em> : light needs to be in a very 
+                            specific quantum state. However it is very difficult, if not
+                            impossible, to assess it experimentally. In this project, we
+                            used a neural network to detect such fondamental state of light 
+                            only from fragmented and measurable experimental data.
+                            It was astonishing for us to see how accurate the AI
+                            model was at this task.  
+                            </p>     
+                        </div>
+                        <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.132.220202" class="btn button--flex button--small portfolio__button">
                             To the paper
                             <i class="uil uil-arrow-right btn__icon"></i>
                         </a>
@@ -261,12 +302,12 @@
                 </div>
             </div>
             
-             <!-- <div class="swiper-button-next">
-                 <i class="uil uil-angle-double-right swiper-portfolio-icon"></i> 
+             <div class="swiper-button-next">
+                 <!-- <i class="uil uil-angle-double-right swiper-portfolio-icon"></i>  -->
             </div>
             <div class="swiper-button-prev">
-                <i class="uil uil-angle-double-left swiper-portfolio-icon"></i> 
-            </div> -->
+                <!-- <i class="uil uil-angle-double-left swiper-portfolio-icon"></i>  -->
+            </div>
             <div class="swiper-pagination"></div> 
         </div>
 
@@ -304,7 +345,7 @@
                          <p class="publication__journal">
                             <strong> <em>Physical Review Letters</em></strong> (2024)
                         </p>
-                            <a href="#" class="btn button--flex button--small publication__button">
+                            <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.132.220202" class="btn button--flex button--small publication__button">
                             To the paper
                             <i class="uil uil-arrow-right btn__icon"></i>
                         </a>
@@ -327,7 +368,7 @@
                             <p class="publication__journal">
                             <strong> <em>Optica Quantum</em></strong> (2025)
                         </p>
-                        <a href="#" class="btn button--flex button--small publication__button">
+                        <a href="https://opg.optica.org/opticaq/fulltext.cfm?uri=opticaq-3-4-312" class="btn button--flex button--small publication__button">
                         To the paper
                         <i class="uil uil-arrow-right btn__icon"></i>
                         </a>
@@ -350,7 +391,7 @@
                         <p class="publication__journal">
                             <strong> <em>Physical Review A</em></strong> (2024)
                         </p>
-                            <a href="#" class="btn button--flex button--small publication__button">
+                            <a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.109.063325" class="btn button--flex button--small publication__button">
                             To the paper
                             <i class="uil uil-arrow-right btn__icon"></i>
                         </a>
@@ -374,7 +415,7 @@
                         <p class="publication__journal">
                             <strong> <em>Physical Review Letters</em></strong> (2023)
                         </p>
-                            <a href="#" class="btn button--flex button--small publication__button">
+                            <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.130.073801" class="btn button--flex button--small publication__button">
                             To the paper
                             <i class="uil uil-arrow-right btn__icon"></i>
                         </a>
@@ -398,7 +439,7 @@
                         <p class="publication__journal">
                             <strong> <em>Physical Review Letters</em></strong> (2021)
                         </p>
-                            <a href="#" class="btn button--flex button--small publication__button">
+                            <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.183901" class="btn button--flex button--small publication__button">
                             To the paper
                             <i class="uil uil-arrow-right btn__icon"></i>
                         </a>

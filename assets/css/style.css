@@ -20,6 +20,7 @@
     --input-color: hsl(var(--hue-color), 70%, 96%);
     --body-color: hsl(var(--hue-color), 60%, 99%);
     --container-color: #fff;
+    --gray-color:  #292727e9 ;
     --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
     --bakground-img: hsl(var(--hue-color), 30%, 85%);
     --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
@@ -66,6 +67,7 @@
         --h1-font-size: 2.25rem;
         --h2-font-size: 1.5rem;
         --h3-font-size: 1.25rem;
+        --super-normal-font-size: 1.12rem;
         --normal-font-size: 1rem;
         --small-font-size: .875rem;
         --smaller-font-size: .813rem;
@@ -608,6 +610,8 @@ body {
 .portfolio__content{
     padding: 0 1.5rem;
     grid-template-columns: 1fr 1fr; /* left, middle, right */
+    
+    
 }
 
 @media screen and (max-width: 768px) {
@@ -620,7 +624,7 @@ body {
 }
 
 .portfolio__container .swiper-slide {
-  width: 80%;         /* each slide takes 80% of the container width */
+  width: 100%;         /* each slide takes 80% of the container width */
   max-width: 1200px;   /* optional limit */
   flex-shrink: 0;
 }
@@ -635,12 +639,17 @@ body {
 }
 
 .portfolio__title{
-    font-size: var(--h3-font-size);
+    font-size: var(--h2-font-size);
     /* margin-bottom: var(--mb-0-5); */
 }
 
 .portfolio__description{
     margin-bottom: var(--mb-0-25);
+    font-size: var(--super-normal-font-size);
+        text-align: justify;
+    text-justify: inter-word; /* improves spacing between words */
+    hyphens: auto;
+    line-height: 1.6;         /* makes text more readable */
 }
 
 .portfolio__button:hover .btn__icon{
@@ -648,6 +657,22 @@ body {
 
 }
 
+/* .text-box-portfolio {
+  background-color: rgba(60, 58, 58, 0.907);
+  color: rgba(224, 219, 219, 0.874);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(224, 219, 219, 0.874);
+  max-width: 600px; 
+  margin: 0 auto;
+} */
+
+.text-box.portfolio__data {
+  background: 
+    linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)), /* overlay for transparency */
+    url('../img/header_image_v2.jpg') no-repeat right/cover; /* image */
+color: var(--gray-color);
+}
 
 .swiper-button-next,
 .swiper-button-prev {
