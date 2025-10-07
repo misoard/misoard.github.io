@@ -60,17 +60,16 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 /*==================== PORTFOLIO SWIPER  ====================*/
 
 let swiper = new Swiper(".swiper-container", {
-    // slidesPerView: "auto",
-    // centeredSlides: true,
-    // spaceBetween: 30,
-    loop: true, 
+    slidesPerView: "auto",
+    centeredSlides: false,
+    spaceBetween: 30,
+    loop: false, 
     cssMode: true,
-            spaceBetween: 10,
-            navigation: {
+    navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
-        pagination: {
+    pagination: {
             el: ".swiper-pagination",
             clickable: true
         },
@@ -80,55 +79,31 @@ let swiper = new Swiper(".swiper-container", {
     //   keyboard: true,
     });
 
-// let swiperInstance;
 
-// function initSwiper() {
-//     // Destroy previous instance if it exists
-//     if (swiperInstance) swiperInstance.destroy(true, true);
 
-//     if (window.innerWidth <= 768) {
-//         // Mobile Swiper
-//         swiperInstance = new Swiper(".mobile-swiper", {
-//             loop: true,
-//             cssMode: true,
-//             navigation: {
-//                 nextEl: ".mobile-swiper .swiper-button-next",
-//                 prevEl: ".mobile-swiper .swiper-button-prev",
-//             },
-//             pagination: {
-//                 el: ".mobile-swiper .swiper-pagination",
-//                 clickable: true,
-//             },
-//             slidesPerView: 1,
-//             spaceBetween: 10,
-//         });
-//     } else {
-//         // Tablet & Desktop Swiper
-//         swiperInstance = new Swiper(".desktop-swiper", {
-//             loop: true,
-//             // cssMode: true,
-//             navigation: {
-//                 nextEl: ".desktop-swiper .swiper-button-next",
-//                 prevEl: ".desktop-swiper .swiper-button-prev",
-//             },
-//             // pagination: {
-//             //     el: ".desktop-swiper .swiper-pagination",
-//             //     clickable: true,
-//             // },
-//             // slidesPerView: 1, // or 3 for desktop
-//             // spaceBetween: 20,
-//         });
-//     }
-// }
+/*==================== PUBLICATIONS SWIPER  ====================*/
 
-// // Initialize on page load
-// initSwiper();
+let swiper_pub = new Swiper(".publication__container", {
+    // slidesPerView: 2,
+    // // centeredSlides: true,
+    // spaceBetween: 300,
+    // loop: true, 
+    // cssMode: true,
 
-// // Re-initialize on window resize
-// window.addEventListener("resize", () => {
-//     initSwiper();
-// });
+    slidesPerView: "auto",      // let Swiper adapt to screen width
+    spaceBetween: 30,           // spacing between slides
+    centeredSlides: false,      // keep slides aligned to left
+    loop: true,                // optional: true if you want infinite loop
+    cssMode: true,             // needed for this style to work properly
+    grabCursor: true,           // makes UX smoother
+    pagination: {
+            el: ".swiper-pagination",
+        },
 
+
+    //   mousewheel: true,
+    //   keyboard: true,
+    });
 
 
 /*==================== TESTIMONIAL ====================*/

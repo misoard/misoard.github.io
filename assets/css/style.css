@@ -537,7 +537,7 @@ body {
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  max-width: 600px; /* optional */
+  max-width: 600px; 
   margin: 0 auto;
 }
 
@@ -614,6 +614,12 @@ body {
     grid-template-columns: 1fr; /* left, middle, right */
 }
 
+}
+
+.portfolio__container .swiper-slide {
+  width: 80%;         /* each slide takes 80% of the container width */
+  max-width: 450px;   /* optional limit */
+  flex-shrink: 0;
 }
 
 
@@ -710,10 +716,98 @@ position: absolute;
 
 /* Publications*/
 
+.publication{
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+.publication__title{
+    text-align: right;
+    color: rgb(0, 0, 0);
+}
+
+.publication__data {
+  text-align: center;
+}
+
+.publication__button{
+  display: inline-flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  margin: 1rem auto; /* centers horizontally */
+  text-align: center;
+
+}
+
+
+.publication__button:hover .btn__icon{
+    transform: translateX(.25rem);
+
+}
+
+.publication__description{
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.publication__authors{
+    margin-top: 1rem;
+    font-size: var(--small-font-size);
+    color: var(--first-color);
+    text-align: left;
+}
+
+
+.publication__journal{
+    margin-top: 1rem;
+    text-align: right;
+    font-size: var(--normal-font-size);
+}
+
+
+
+/* .text-box.publication__data {
+    max-width: 90vw;
+    box-sizing: border-box;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+} */
+
+
 .publications__container {
     overflow: initial;
     padding: 0 1rem; 
-    position: relative;  
+    position: relative;
+}
+
+.publication__container .swiper-slide {
+  width: 80%;         /* each slide takes 80% of the container width */
+  max-width: 450px;   /* optional limit */
+  flex-shrink: 0;
+}
+
+/* .swiper-slide {
+  height: 100%;                
+} */
+
+.publication__content {
+    justify-content: space-between;
+    display: flex; 
+    flex-direction: column;
+    max-width: 90vw;
+    box-sizing: border-box;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+          /* height: 100%; */
+
+
+} 
+
+.publication__container .swiper-pagination {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 
@@ -722,4 +816,4 @@ position: absolute;
 .contact__form input, .contact__form textarea { padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
 
 /* Footer */
-.footer { background: var(--first-color); color: #fff; text-align: center; padding: 20px; margin-top: 50px; }
+.footer { background: var(--first-color); color: #fff; text-align: center; padding: 20px; }
