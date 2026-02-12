@@ -445,7 +445,7 @@ Running 30min 5km"></textarea>
 				$('#demo-parse-btn').prop('disabled', true);
 
 				$.ajax({
-					url: 'https://your-backend.com/api/v1/demo/parse',
+					url: 'https://ai-trainingdashboard-production.up.railway.app/api/v1/demo/parse',
 					method: 'POST',
 					contentType: 'application/json',
 					data: JSON.stringify({ raw_text: raw }),
