@@ -475,16 +475,70 @@ Running 30min 5km"></textarea>
 				});
 			}
 
+			// Normalize: if any value is a JSON string, parse it
+			function normalizeResponse(obj) {
+				if (!obj || typeof obj !== 'object') return obj;
+				// If session_data is a string, parse it and merge
+				if (typeof obj.session_data === 'string') {
+					try { obj = $.extend({}, obj, JSON.parse(obj.session_data)); } catch(e) {}
+				}
+				// If session is a string, parse it
+				if (typeof obj.session === 'string') {
+					try { obj.session = JSON.parse(obj.session); } catch(e) {}
+				}
+				return obj;
+			}
+
+			function findBlocks(raw) {
+				var obj = normalizeResponse(raw);
+				if (!obj || typeof obj !== 'object') return [];
+				// Direct: obj.blocks
+				if (Array.isArray(obj.blocks)) return obj.blocks;
+				// Nested: obj.session.blocks
+				if (obj.session && Array.isArray(obj.session.blocks)) return obj.session.blocks;
+				// Search all keys one level
+				for (var key in obj) {
+					if (obj[key] && typeof obj[key] === 'object' && Array.isArray(obj[key].blocks)) {
+						return obj[key].blocks;
+					}
+				}
+				return [];
+			}
+
+			function findSessionName(raw) {
+				var obj = normalizeResponse(raw);
+				if (!obj || typeof obj !== 'object') return '';
+				if (obj.title) return obj.title;
+				if (obj.session && obj.session.title) return obj.session.title;
+				if (obj.session_name) return obj.session_name;
+				if (obj.session && obj.session.session_name) return obj.session.session_name;
+				return '';
+			}
+
+			function findSessionNotes(raw) {
+				var obj = normalizeResponse(raw);
+				if (!obj || typeof obj !== 'object') return '';
+				if (obj.session_notes) return obj.session_notes;
+				if (obj.session && obj.session.session_notes) return obj.session.session_notes;
+				return '';
+			}
+
 			function renderSession(data) {
-				var blocks = data.blocks || data.session?.blocks || [];
+				console.log('API response:', JSON.stringify(data, null, 2));
+				var blocks = findBlocks(data);
 				if (!blocks.length) {
-					$('#demo-output').html('<div class="demo-placeholder"><p style="color:#999;">No blocks detected. Try a different input.</p></div>');
+					$('#demo-output').html('<div class="demo-placeholder"><p style="color:#999;">No blocks detected. Check the browser console for the raw API response.</p></div>');
 					return;
 				}
 
 				var html = '';
-				if (data.session_name || data.session?.session_name) {
-					html += '<div class="demo-session-title">' + escHtml(data.session_name || data.session.session_name) + '</div>';
+				var sessionName = findSessionName(data);
+				if (sessionName && sessionName !== 'None' && sessionName !== 'null') {
+					html += '<div class="demo-session-title">' + escHtml(sessionName) + '</div>';
+				}
+				var notes = findSessionNotes(data);
+				if (notes && notes !== 'null') {
+					html += '<div style="font-size:0.85em; color:#6b7280; font-style:italic; margin-bottom:1em; padding:0.5em 0.75em; background:#fffbeb; border-radius:8px;">' + escHtml(notes) + '</div>';
 				}
 
 				blocks.forEach(function(block, bi) {
