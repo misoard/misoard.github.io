@@ -45,10 +45,25 @@
 							<div class="inner">
 
 								<h3>The Vision</h3>
-								<p>
-									
-								</p>
-								<p>
+				
+									<p>
+										<strong>Can artificial intelligence help us write workout gym notes efficiently to easily track our progress?</strong>
+									</p>
+									<p>
+										This project started with a <strong>personal need</strong>. When I go to the gym, I need to take notes 
+										to track my weights, my reps, my number of sets and my exercises. It is a <strong>must</strong> for anyone 
+										who wants to track their progress and improve their performance. If you do not do it, you won't
+										progress simply because you cannot remember everything from one workout to the next. <br/>
+										However, taking notes can be time-consuming and I never found a good app that would help me do it efficiently.
+										If you download such apps, you will realize that you need to look for specific exercise 
+										and enter all details (reps, weights, sets, ...) manually.  <br/>
+										You cannot really do that when you are at the gym! I don't have time! 
+										I just want to be able to write <em>'Bench press 100x10 4S'</em> (understand: 'I did 4 sets of 10 reps at 100kg') and have it automatically 
+										<strong>converted</strong> to a structured format to be able to track my progress. <br/>
+										<br/>
+										This is what I did and I called my app <strong>FitBoard Training</strong>.
+
+
 									
 								</p>
 
@@ -57,7 +72,7 @@
 								
 						
 
-								<h3>Why This Matters</h3>
+								<!-- <h3>Why This Matters</h3>
 								<p>
 									
 								</p>
@@ -65,7 +80,7 @@
 									This project is a work in progress. 
 								</p>
 
-								<hr />
+								<hr /> -->
 
 								<h3>What does the app do?</h3>
 								<div class="row">
@@ -98,7 +113,7 @@
 								<h3>Want to try it?</h3>
 								<p>
 									Type your workout notes below &mdash; just like you'd jot them in a notebook &mdash; and watch the AI
-									parse them into a structured session. You have <strong>2 attempts</strong> to try it out.
+									parse them into a structured session.
 								</p>
 
 								<div class="row gtr-200">
@@ -108,20 +123,12 @@
 											<h4 style="margin: 0;">Your raw notes</h4>
 											<a href="#" class="button small" onclick="loadExample(); return false;" style="font-size: 0.65em; padding: 0 1.5em; white-space: nowrap;">Generate an example</a>
 										</div>
-										<textarea id="demo-input" rows="12" placeholder="Example:
-Bench press 4x10 80kg rest 1min30
-Superset:
-  Bicep curl 3x12 14kg
-  Tricep pushdown 3x12 20kg
-  rest 45s
-Running 30min 5km"></textarea>
+										<textarea id="demo-input" rows="12" ></textarea>
 										<ul class="actions" style="margin-top: 1em;">
 											<li><button id="demo-parse-btn" class="button primary" onclick="parseSession()">
 												<span id="btn-text">Parse Session</span>
 												<span id="btn-loader" style="display:none;">Parsing...</span>
 											</button></li>
-											<li><button class="button small" onclick="loadTestData()">Test with sample data</button></li>
-											<li><span id="demo-attempts" style="line-height: 3.125em; font-size: 0.85em; color: #888;">2 attempts remaining</span></li>
 										</ul>
 										<p id="demo-error" style="display:none; color:#ed4933; margin-top:0.5em; font-size:0.9em;"></p>
 									</div>
@@ -136,6 +143,14 @@ Running 30min 5km"></textarea>
 											</div>
 										</div>
 									</div>
+								</div>
+
+								<!-- Always-visible CTA -->
+								<div id="demo-cta" class="demo-cta-card" style="margin-top: 2em;">
+									<p id="demo-cta-text">Want to try it for real with your workout sessions? Follow the link below and create your account!</p>
+									<ul class="actions">
+										<li><a href="https://ai-training-dashboard.vercel.app" target="_blank" class="button primary small">Try FitBoard</a></li>
+									</ul>
 								</div>
 
 								<hr />
@@ -491,6 +506,53 @@ Running 30min 5km"></textarea>
 				color: #111827;
 			}
 
+			/* Loading spinner */
+			.demo-loading {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				min-height: 220px;
+				text-align: center;
+				gap: 1.2em;
+			}
+			.demo-spinner {
+				width: 40px;
+				height: 40px;
+				border: 4px solid #e5e7eb;
+				border-top: 4px solid #2563eb;
+				border-radius: 50%;
+				animation: demo-spin 0.8s linear infinite;
+			}
+			@keyframes demo-spin {
+				to { transform: rotate(360deg); }
+			}
+			.demo-loading-text {
+				color: #6b7280;
+				font-size: 0.85em;
+				line-height: 1.5;
+				max-width: 280px;
+			}
+
+			/* CTA banner */
+			.demo-cta-card {
+				background: #f4f4f4;
+				border: 1px solid #dfdfdf;
+				border-radius: 8px;
+				padding: 1.5em 2em;
+				text-align: center;
+			}
+			.demo-cta-card p {
+				color: #2E3842;
+				font-size: 0.95em;
+				line-height: 1.6;
+				margin: 0 0 1em;
+			}
+			.demo-cta-card .actions {
+				justify-content: center;
+				margin: 0;
+			}
+
 			/* Session title */
 			.demo-session-title {
 				font-size: 0.9em;
@@ -512,20 +574,21 @@ Running 30min 5km"></textarea>
 				"Pull ups 4x8 rest 1min30\nBarbell row 4x10 60kg rest 1min\nSuperset:\n  Face pull 3x15 15kg\n  Hammer curl 3x12 14kg\n  rest 45s\nRunning intervals 20min: 4x(2min fast + 1min slow)"
 			];
 
-			function loadTestData() {
-				var testResponse = {"parsed_session":{"session":{"title":"Workout: Chest and Core","start_date_time":"2026-02-12T14:20:55.939818","end_date_time":"2026-02-12T14:45:55.939818","duration_minutes":25,"bodyweight_kg":null,"session_notes":null,"blocks":[{"block_type":"single","block_name":"Bench press","rest_time_between_block":null,"sets":[{"rest_time_between_sets":90,"movements":[{"movement_type":"strength","exercise_name_original":"Bench press","exercise_name_interpreted":"Bench press","reps":10,"weight":80,"additional_reps":3,"weight_for_additional_reps":60,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null}]},{"rest_time_between_sets":90,"movements":[{"movement_type":"strength","exercise_name_original":"Bench press","exercise_name_interpreted":"Bench press","reps":10,"weight":80,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null}]},{"rest_time_between_sets":90,"movements":[{"movement_type":"strength","exercise_name_original":"Bench press","exercise_name_interpreted":"Bench press","reps":10,"weight":80,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null}]},{"rest_time_between_sets":90,"movements":[{"movement_type":"strength","exercise_name_original":"Bench press","exercise_name_interpreted":"Bench press","reps":10,"weight":80,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null}]}]},{"block_type":"single","block_name":"Incline dumbbell press","rest_time_between_block":null,"sets":[{"rest_time_between_sets":60,"movements":[{"movement_type":"strength","exercise_name_original":"Incline dumbbell press","exercise_name_interpreted":"Incline dumbbell press","reps":12,"weight":26,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null}]},{"rest_time_between_sets":60,"movements":[{"movement_type":"strength","exercise_name_original":"Incline dumbbell press","exercise_name_interpreted":"Incline dumbbell press","reps":12,"weight":26,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null}]},{"rest_time_between_sets":60,"movements":[{"movement_type":"strength","exercise_name_original":"Incline dumbbell press","exercise_name_interpreted":"Incline dumbbell press","reps":12,"weight":26,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null}]}]},{"block_type":"superset","block_name":"Superset: Cable fly + Push ups","rest_time_between_block":null,"sets":[{"rest_time_between_sets":45,"movements":[{"movement_type":"strength","exercise_name_original":"Cable fly","exercise_name_interpreted":"Cable fly","reps":15,"weight":10,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null},{"movement_type":"strength","exercise_name_original":"Push ups","exercise_name_interpreted":"Push ups","reps":20,"weight":null,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null}]},{"rest_time_between_sets":45,"movements":[{"movement_type":"strength","exercise_name_original":"Cable fly","exercise_name_interpreted":"Cable fly","reps":15,"weight":10,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null},{"movement_type":"strength","exercise_name_original":"Push ups","exercise_name_interpreted":"Push ups","reps":20,"weight":null,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null}]},{"rest_time_between_sets":45,"movements":[{"movement_type":"strength","exercise_name_original":"Cable fly","exercise_name_interpreted":"Cable fly","reps":15,"weight":10,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null},{"movement_type":"strength","exercise_name_original":"Push ups","exercise_name_interpreted":"Push ups","reps":20,"weight":null,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null}]}]},{"block_type":"single","block_name":"Running","rest_time_between_block":null,"sets":[{"rest_time_between_sets":null,"movements":[{"movement_type":"cardio","exercise_name_original":"Running","exercise_name_interpreted":"Running","reps":null,"weight":null,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":1500,"velocity_kmh":10.8,"distance_km":4.5,"allure_min_per_km":"5:33","intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null}]}]}]}},"inferred_session_type":"strength","blocks_count":4,"processing_time_ms":9872};
-				renderSession(testResponse);
-			}
-
 			function loadExample() {
 				var idx = Math.floor(Math.random() * exampleNotes.length);
 				$('#demo-input').val(exampleNotes[idx]).focus();
 				$('#demo-error').hide();
 			}
 
+			function showRateLimitCta() {
+				$('#demo-error').hide();
+				$('#demo-cta-text').html('Enjoyed the demo? Create a free account on <strong>FitBoard</strong> to parse all your workout sessions, track your progress, and more. Use it on desktop or add it as a native app on your phone!');
+				$('#demo-parse-btn').prop('disabled', true).addClass('disabled');
+			}
+
 			function parseSession() {
 				if (demoAttempts <= 0) {
-					$('#demo-error').text('You have used all your demo attempts. Thank you for trying!').show();
+					showRateLimitCta();
 					return;
 				}
 
@@ -540,6 +603,14 @@ Running 30min 5km"></textarea>
 				$('#btn-loader').show();
 				$('#demo-parse-btn').prop('disabled', true);
 
+				// Show loading spinner in the output area
+				$('#demo-output').html(
+					'<div class="demo-loading">' +
+					'<div class="demo-spinner"></div>' +
+					'<p class="demo-loading-text">Don\'t worry, this might take up to 30 seconds.<br/>Our AI agents are working on your gym workout notes.</p>' +
+					'</div>'
+				);
+
 				$.ajax({
 					url: 'https://ai-trainingdashboard-production.up.railway.app/api/v1/demo/parse',
 					method: 'POST',
@@ -549,27 +620,17 @@ Running 30min 5km"></textarea>
 					timeout: 60000,
 					success: function(data) {
 						demoAttempts--;
-						$('#demo-attempts').text(demoAttempts + ' attempt' + (demoAttempts !== 1 ? 's' : '') + ' remaining');
-						// Handle case where response is a string
 						if (typeof data === 'string') {
-							try { data = JSON.parse(data); } catch(e) {
-								console.error('Failed to parse response string:', e);
-							}
-						}
-						console.log('Parsed data type:', typeof data);
-						console.log('Data keys:', Object.keys(data || {}));
-						console.log('Has session?', !!data.session);
-						if (data.session) {
-							console.log('Session keys:', Object.keys(data.session));
-							console.log('Has blocks?', Array.isArray(data.session.blocks), data.session.blocks ? data.session.blocks.length : 0);
+							try { data = JSON.parse(data); } catch(e) {}
 						}
 						renderSession(data);
 					},
 					error: function(xhr) {
+						// Restore placeholder
+						$('#demo-output').html('<div class="demo-placeholder"><span class="icon solid fa-dumbbell" style="font-size:2em; color:#ccc;"></span><p style="color:#999; margin-top:0.5em;">Your parsed session will appear here</p></div>');
 						if (xhr.status === 429) {
 							demoAttempts = 0;
-							$('#demo-attempts').text('0 attempts remaining');
-							$('#demo-error').text('Rate limit reached. Thank you for trying the demo!').show();
+							showRateLimitCta();
 						} else {
 							$('#demo-error').text('Something went wrong. Please try again.').show();
 						}
@@ -579,7 +640,7 @@ Running 30min 5km"></textarea>
 						$('#btn-loader').hide();
 						$('#demo-parse-btn').prop('disabled', false);
 						if (demoAttempts <= 0) {
-							$('#demo-parse-btn').prop('disabled', true).addClass('disabled');
+							showRateLimitCta();
 						}
 					}
 				});
