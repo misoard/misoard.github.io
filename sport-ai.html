@@ -120,6 +120,7 @@ Running 30min 5km"></textarea>
 												<span id="btn-text">Parse Session</span>
 												<span id="btn-loader" style="display:none;">Parsing...</span>
 											</button></li>
+											<li><button class="button small" onclick="loadTestData()">Test with sample data</button></li>
 											<li><span id="demo-attempts" style="line-height: 3.125em; font-size: 0.85em; color: #888;">2 attempts remaining</span></li>
 										</ul>
 										<p id="demo-error" style="display:none; color:#ed4933; margin-top:0.5em; font-size:0.9em;"></p>
@@ -198,7 +199,7 @@ Running 30min 5km"></textarea>
 				color: #aaa;
 			}
 
-			/* Output area */
+			/* Output area — force sans-serif to match app */
 			.demo-output-area {
 				min-height: 260px;
 				padding: 1em;
@@ -207,6 +208,10 @@ Running 30min 5km"></textarea>
 				background: #f8f9fa;
 				overflow-y: auto;
 				max-height: 600px;
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, Helvetica, Arial, sans-serif;
+			}
+			.demo-output-area * {
+				font-family: inherit;
 			}
 			.demo-placeholder {
 				display: flex;
@@ -267,6 +272,7 @@ Running 30min 5km"></textarea>
 				font-size: 0.95em;
 				color: #111827;
 				margin: 0;
+				line-height: 1.3;
 				display: flex;
 				align-items: center;
 				gap: 0.5em;
@@ -366,14 +372,19 @@ Running 30min 5km"></textarea>
 			.demo-rest-badge {
 				display: inline-flex;
 				align-items: center;
-				gap: 0.25em;
-				padding: 0.2em 0.5em;
-				background: #fffbeb;
-				color: #b45309;
+				justify-content: center;
+				gap: 0.2em;
+				padding: 0.3em 0.6em;
+				background: #fef3c7;
+				color: #d97706;
 				border-radius: 9999px;
-				font-size: 0.75em;
-				font-weight: 600;
+				font-size: 0.78em;
+				font-weight: 700;
 				flex-shrink: 0;
+				min-width: 2.5em;
+			}
+			.demo-rest-badge .demo-clock {
+				font-size: 0.85em;
 			}
 
 			/* Cardio metrics */
@@ -392,12 +403,92 @@ Running 30min 5km"></textarea>
 				color: #2563eb;
 			}
 
-			/* Compound exercise list in header */
-			.demo-exercise-summary {
-				font-size: 0.85em;
-				font-weight: 500;
+			/* Exercise summary line (expanded single block) */
+			.demo-exercise-line {
+				display: flex;
+				align-items: center;
+				gap: 0.5em;
+				flex-wrap: wrap;
+				padding: 0.6em 1em 0.25em;
+			}
+			.demo-exercise-name-lg {
+				font-weight: 600;
+				font-size: 1.05em;
 				color: #111827;
-				padding: 0.5em 1em 0.75em;
+			}
+
+			/* Volume & reps pill badges */
+			.demo-volume-badge {
+				display: inline-block;
+				padding: 0.15em 0.6em;
+				background: #dbeafe;
+				color: #1d4ed8;
+				border-radius: 9999px;
+				font-size: 0.75em;
+				font-weight: 600;
+			}
+			.demo-reps-badge {
+				display: inline-block;
+				padding: 0.15em 0.6em;
+				background: #f3f4f6;
+				color: #374151;
+				border-radius: 9999px;
+				font-size: 0.75em;
+				font-weight: 600;
+			}
+
+			/* SETS section header */
+			.demo-sets-header {
+				font-size: 0.7em;
+				font-weight: 600;
+				color: #9ca3af;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+				padding: 0.5em 1em 0.25em;
+			}
+
+			/* Compound exercise list (superset/circuit) */
+			.demo-compound-wrap {
+				padding: 0.4em 1em 0;
+			}
+			.demo-compound-exercise {
+				display: flex;
+				align-items: flex-start;
+				gap: 0.5em;
+				padding: 0.2em 0;
+			}
+			.demo-connector-col {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 10px;
+				padding-top: 0.45em;
+			}
+			.demo-connector-dot {
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+				flex-shrink: 0;
+			}
+			.demo-connector-dot.superset { background: #93c5fd; }
+			.demo-connector-dot.circuit { background: #c4b5fd; }
+			.demo-connector-dot.single { background: #d1d5db; }
+			.demo-connector-line {
+				width: 2px;
+				height: 20px;
+			}
+			.demo-connector-line.superset { background: #93c5fd; }
+			.demo-connector-line.circuit { background: #c4b5fd; }
+			.demo-compound-info {
+				display: flex;
+				align-items: center;
+				gap: 0.4em;
+				flex-wrap: wrap;
+			}
+			.demo-exercise-name-md {
+				font-weight: 600;
+				font-size: 0.95em;
+				color: #111827;
 			}
 
 			/* Session title */
@@ -420,6 +511,11 @@ Running 30min 5km"></textarea>
 				"Squat 5x5 100kg rest 2min\nRomanian deadlift 4x10 70kg rest 1min30\nSuperset:\n  Leg curl 3x12 40kg\n  Leg extension 3x12 35kg\n  rest 1min\nCalf raises 4x15 60kg rest 45s",
 				"Pull ups 4x8 rest 1min30\nBarbell row 4x10 60kg rest 1min\nSuperset:\n  Face pull 3x15 15kg\n  Hammer curl 3x12 14kg\n  rest 45s\nRunning intervals 20min: 4x(2min fast + 1min slow)"
 			];
+
+			function loadTestData() {
+				var testResponse = {"parsed_session":{"session":{"title":"Workout: Chest and Core","start_date_time":"2026-02-12T14:20:55.939818","end_date_time":"2026-02-12T14:45:55.939818","duration_minutes":25,"bodyweight_kg":null,"session_notes":null,"blocks":[{"block_type":"single","block_name":"Bench press","rest_time_between_block":null,"sets":[{"rest_time_between_sets":90,"movements":[{"movement_type":"strength","exercise_name_original":"Bench press","exercise_name_interpreted":"Bench press","reps":10,"weight":80,"additional_reps":3,"weight_for_additional_reps":60,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null}]},{"rest_time_between_sets":90,"movements":[{"movement_type":"strength","exercise_name_original":"Bench press","exercise_name_interpreted":"Bench press","reps":10,"weight":80,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null}]},{"rest_time_between_sets":90,"movements":[{"movement_type":"strength","exercise_name_original":"Bench press","exercise_name_interpreted":"Bench press","reps":10,"weight":80,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null}]},{"rest_time_between_sets":90,"movements":[{"movement_type":"strength","exercise_name_original":"Bench press","exercise_name_interpreted":"Bench press","reps":10,"weight":80,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null}]}]},{"block_type":"single","block_name":"Incline dumbbell press","rest_time_between_block":null,"sets":[{"rest_time_between_sets":60,"movements":[{"movement_type":"strength","exercise_name_original":"Incline dumbbell press","exercise_name_interpreted":"Incline dumbbell press","reps":12,"weight":26,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null}]},{"rest_time_between_sets":60,"movements":[{"movement_type":"strength","exercise_name_original":"Incline dumbbell press","exercise_name_interpreted":"Incline dumbbell press","reps":12,"weight":26,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null}]},{"rest_time_between_sets":60,"movements":[{"movement_type":"strength","exercise_name_original":"Incline dumbbell press","exercise_name_interpreted":"Incline dumbbell press","reps":12,"weight":26,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null}]}]},{"block_type":"superset","block_name":"Superset: Cable fly + Push ups","rest_time_between_block":null,"sets":[{"rest_time_between_sets":45,"movements":[{"movement_type":"strength","exercise_name_original":"Cable fly","exercise_name_interpreted":"Cable fly","reps":15,"weight":10,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null},{"movement_type":"strength","exercise_name_original":"Push ups","exercise_name_interpreted":"Push ups","reps":20,"weight":null,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null}]},{"rest_time_between_sets":45,"movements":[{"movement_type":"strength","exercise_name_original":"Cable fly","exercise_name_interpreted":"Cable fly","reps":15,"weight":10,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null},{"movement_type":"strength","exercise_name_original":"Push ups","exercise_name_interpreted":"Push ups","reps":20,"weight":null,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null}]},{"rest_time_between_sets":45,"movements":[{"movement_type":"strength","exercise_name_original":"Cable fly","exercise_name_interpreted":"Cable fly","reps":15,"weight":10,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null},{"movement_type":"strength","exercise_name_original":"Push ups","exercise_name_interpreted":"Push ups","reps":20,"weight":null,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":null,"velocity_kmh":null,"distance_km":null,"allure_min_per_km":null,"intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null}]}]},{"block_type":"single","block_name":"Running","rest_time_between_block":null,"sets":[{"rest_time_between_sets":null,"movements":[{"movement_type":"cardio","exercise_name_original":"Running","exercise_name_interpreted":"Running","reps":null,"weight":null,"additional_reps":null,"weight_for_additional_reps":null,"duration_sec":1500,"velocity_kmh":10.8,"distance_km":4.5,"allure_min_per_km":"5:33","intervals":null,"repetitions":null,"rest_time_between_exercices":null,"additional_comments":null}]}]}]}},"inferred_session_type":"strength","blocks_count":4,"processing_time_ms":9872};
+				renderSession(testResponse);
+			}
 
 			function loadExample() {
 				var idx = Math.floor(Math.random() * exampleNotes.length);
@@ -493,6 +589,33 @@ Running 30min 5km"></textarea>
 				return data && data.parsed_session && data.parsed_session.session ? data.parsed_session.session : null;
 			}
 
+			function calcExerciseStats(block, exerciseIndex) {
+				var totalVolume = 0, totalReps = 0;
+				if (block.sets) {
+					block.sets.forEach(function(set) {
+						var mov = set.movements[exerciseIndex];
+						if (!mov) return;
+						var w = mov.weight || 0;
+						var r = (typeof mov.reps === 'number') ? mov.reps : 0;
+						totalVolume += w * r;
+						totalReps += r;
+						if (mov.additional_reps && typeof mov.additional_reps === 'number') {
+							var aw = (mov.weight_for_additional_reps !== null && mov.weight_for_additional_reps !== undefined) ? mov.weight_for_additional_reps : w;
+							totalVolume += aw * mov.additional_reps;
+							totalReps += mov.additional_reps;
+						}
+					});
+				}
+				return { totalVolume: totalVolume, totalReps: totalReps };
+			}
+
+			function formatNumber(n) {
+				if (typeof n === 'number') {
+					return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+				}
+				return n;
+			}
+
 			function renderSession(data) {
 				var session = getSession(data);
 				if (!session || !session.blocks || !session.blocks.length) {
@@ -549,30 +672,76 @@ Running 30min 5km"></textarea>
 
 					if (isCardio && exercises.length > 0) {
 						var mv = exercises[0];
+						// Main cardio metrics with dot separators
 						html += '<div class="demo-cardio-metrics">';
-						if (mv.duration_sec) html += '<div><span class="demo-cardio-label">Time: </span><span class="demo-cardio-value">' + Math.floor(mv.duration_sec / 60) + ' min</span></div>';
-						if (mv.distance_km) html += '<div><span class="demo-cardio-label">Distance: </span><span class="demo-cardio-value">' + mv.distance_km + ' km</span></div>';
-						if (mv.allure_min_per_km) html += '<div><span class="demo-cardio-value">' + mv.allure_min_per_km + ' min/km</span></div>';
+						var metricParts = [];
+						if (mv.duration_sec) metricParts.push('<span class="demo-cardio-label">Time: </span><span class="demo-cardio-value">' + Math.floor(mv.duration_sec / 60) + ' min</span>');
+						if (mv.distance_km) metricParts.push('<span class="demo-cardio-label">Distance: </span><span class="demo-cardio-value">' + mv.distance_km + ' km</span>');
+						if (mv.allure_min_per_km) metricParts.push('<span class="demo-cardio-value">' + mv.allure_min_per_km + ' min/km</span>');
+						html += metricParts.map(function(p) { return '<div>' + p + '</div>'; }).join('<div style="font-size:1.2em; color:#6b7280;">&bull;</div>');
 						html += '</div>';
 
+						// Intervals section
 						if (mv.intervals && mv.intervals.length > 0) {
+							var intervalCount = mv.repetitions || mv.intervals.length;
 							html += '<div style="border-top:1px solid #f3f4f6; margin-top:0.5em; padding-top:0.5em;">';
-							html += '<p style="font-size:0.85em; color:#374151; margin-bottom:0.3em;"><strong>' + mv.intervals.length + '</strong> intervals:</p>';
+							html += '<p style="font-size:0.85em; color:#374151; margin-bottom:0.4em;"><strong>' + intervalCount + '</strong> intervals:</p>';
+							html += '<div style="font-size:0.9em; display:flex; align-items:center; gap:0.5em; flex-wrap:wrap;">';
 							mv.intervals.forEach(function(intv, ii) {
-								html += '<span style="font-size:0.85em;">';
-								if (ii > 0) html += ' + ';
+								if (ii > 0) html += '<span style="color:#6b7280;">+</span>';
+								html += '<span style="display:inline-flex; align-items:center; gap:0.3em;">';
 								if (intv.duration_sec) {
 									var mm = Math.floor(intv.duration_sec / 60);
 									var ss = intv.duration_sec % 60;
 									html += '<span class="demo-cardio-value">' + mm + ':' + String(ss).padStart(2, '0') + '</span>';
 								}
-								if (intv.allure_min_per_km) html += ' <span class="demo-cardio-value">@ ' + intv.allure_min_per_km + '</span>';
-								if (intv.velocity_kmh) html += ' <span class="demo-cardio-value">@ ' + intv.velocity_kmh + ' km/h</span>';
+								if (intv.allure_min_per_km) {
+									// Numeric pace (contains :) → show as "@ X min/km"
+									// Text intensity (e.g. "fast") → show directly
+									if (intv.allure_min_per_km.indexOf(':') !== -1) {
+										html += '<span style="color:#6b7280;">@</span> <span class="demo-cardio-value">' + intv.allure_min_per_km + ' min/km</span>';
+									} else {
+										html += '<span class="demo-cardio-value">' + intv.allure_min_per_km + '</span>';
+									}
+								}
+								if (intv.velocity_kmh) html += '<span style="color:#6b7280;">@</span> <span class="demo-cardio-value">' + intv.velocity_kmh + ' km/h</span>';
 								html += '</span>';
 							});
 							html += '</div>';
+							html += '</div>';
 						}
 					} else {
+						// Exercise summary with volume/reps badges
+						if (type === 'single' && exercises.length === 1) {
+							var exStats = calcExerciseStats(block, 0);
+							html += '<div class="demo-exercise-line">';
+							html += '<span class="demo-exercise-name-lg">' + escHtml(exercises[0].exercise_name_interpreted || exercises[0].exercise_name_original || 'Exercise') + '</span>';
+							if (exStats.totalVolume > 0) html += ' <span class="demo-volume-badge">' + formatNumber(Math.round(exStats.totalVolume)) + ' kg</span>';
+							if (exStats.totalReps > 0) html += ' <span class="demo-reps-badge">' + exStats.totalReps + ' reps</span>';
+							html += '</div>';
+						} else if (exercises.length > 1) {
+							// Compound: show each exercise with connector dots
+							html += '<div class="demo-compound-wrap">';
+							exercises.forEach(function(ex, ei) {
+								var exStats = calcExerciseStats(block, ei);
+								html += '<div class="demo-compound-exercise">';
+								html += '<div class="demo-connector-col">';
+								html += '<div class="demo-connector-dot ' + type + '"></div>';
+								if (ei < exercises.length - 1) html += '<div class="demo-connector-line ' + type + '"></div>';
+								html += '</div>';
+								html += '<div class="demo-compound-info">';
+								html += '<span class="demo-exercise-name-md">' + escHtml(ex.exercise_name_interpreted || ex.exercise_name_original || '') + '</span>';
+								if (exStats.totalVolume > 0) html += ' <span class="demo-volume-badge">' + formatNumber(Math.round(exStats.totalVolume)) + ' kg</span>';
+								if (exStats.totalReps > 0) html += ' <span class="demo-reps-badge">' + exStats.totalReps + ' reps</span>';
+								html += '</div>';
+								html += '</div>';
+							});
+							html += '</div>';
+						}
+
+						// SETS header
+						html += '<div class="demo-sets-header">Sets</div>';
+
 						// Strength sets
 						if (block.sets) {
 							block.sets.forEach(function(set, si) {
@@ -582,23 +751,46 @@ Running 30min 5km"></textarea>
 								set.movements.forEach(function(mov) {
 									html += '<div class="demo-movement">';
 									if (exercises.length > 1) {
-										html += '<span class="demo-movement-name">' + escHtml(mov.exercise_name_interpreted || mov.exercise_name_original || '') + ':</span> ';
+										html += '<span class="demo-movement-name">' + escHtml((mov.exercise_name_interpreted || mov.exercise_name_original || '').split(' ')[0]) + ':</span> ';
 									}
-									if (mov.weight) html += '<span class="demo-weight">' + mov.weight + 'kg</span>';
-									if (mov.weight && mov.reps) html += '<span class="demo-times"> &times; </span>';
-									if (mov.reps) html += '<span class="demo-reps">' + mov.reps + '</span>';
-									if (mov.additional_reps) {
-										var aw = (mov.weight_for_additional_reps !== null && mov.weight_for_additional_reps !== undefined) ? mov.weight_for_additional_reps : mov.weight;
+
+									// Determine if additional_reps should be combined or shown separately
+									var hasAdditionalWeight = mov.weight_for_additional_reps !== null && mov.weight_for_additional_reps !== undefined;
+									var showAdditionalSeparately = mov.additional_reps && hasAdditionalWeight;
+
+									// Calculate display reps (combine when same weight / no separate weight)
+									var displayReps = mov.reps;
+									if (mov.additional_reps && !hasAdditionalWeight) {
+										if (typeof mov.reps === 'number' && typeof mov.additional_reps === 'number') {
+											displayReps = mov.reps + mov.additional_reps;
+										} else if (typeof mov.reps === 'string' && typeof mov.additional_reps === 'string') {
+											displayReps = mov.reps; // can't easily combine time strings, show main only
+										}
+									}
+
+									var showWeight = mov.weight !== null && mov.weight !== 0 && mov.weight;
+									if (showWeight) {
+										html += '<span class="demo-weight">' + mov.weight + 'kg</span>';
+										if (displayReps) html += '<span class="demo-times"> &times; </span>';
+										if (displayReps) html += '<span class="demo-reps">' + displayReps + '</span>';
+									} else if (displayReps) {
+										html += '<span class="demo-reps">' + displayReps + (typeof displayReps === 'number' ? ' reps' : '') + '</span>';
+									}
+
+									// Show additional reps separately only when weight differs (dropsets)
+									if (showAdditionalSeparately) {
 										html += '<span class="demo-times"> + </span>';
-										if (aw) html += '<span class="demo-weight">' + aw + 'kg</span><span class="demo-times"> &times; </span>';
+										html += '<span class="demo-weight">' + mov.weight_for_additional_reps + 'kg</span>';
+										html += '<span class="demo-times"> &times; </span>';
 										html += '<span class="demo-reps">' + mov.additional_reps + '</span>';
 									}
+
 									html += '</div>';
 								});
 								html += '</div>';
 
 								if (set.rest_time_between_sets) {
-									html += '<div class="demo-rest-badge">' + formatRest(set.rest_time_between_sets) + '</div>';
+									html += '<div class="demo-rest-badge"><span class="demo-clock">&#9201;</span> ' + formatRest(set.rest_time_between_sets) + '</div>';
 								}
 								html += '</div>';
 							});
