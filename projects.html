@@ -1,0 +1,278 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Projects - Mathieu Isoard</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Projects by Mathieu Isoard - Medical imaging, Kaggle competitions, AI for quantum computing, and Sport & AI." />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.tab-content {
+				display: none;
+			}
+			.tab-content.active {
+				display: block;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Mathieu Isoard</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="about.html">About</a></li>
+											<li><a href="cv.html">CV</a></li>
+											<li><a href="projects.html">Projects</a></li>
+											<li><a href="publications.html">Publications</a></li>
+											<li><a href="contact.html">Contact</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>Projects</h2>
+							<p>Most recent works at the intersection of AI and science</p>
+							<ul class="actions special">
+								<li><a href="#" class="button primary tab-btn" data-tab="work">Work Projects</a></li>
+								<li><a href="#" class="button tab-btn" data-tab="personal">Personal Projects</a></li>
+							</ul>
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+
+								<!-- ======================== -->
+								<!-- WORK PROJECTS TAB       -->
+								<!-- ======================== -->
+								<div id="tab-work" class="tab-content active">
+
+									<!-- Project 1 -->
+									<h3>Domain Shifts Mitigation in Medical Cell Datasets</h3>
+									<p>
+										<span class="image left"><img src="images/dataset_alignment.png" alt="Domain shifts mitigation in medical cell datasets" /></span>
+										<strong>Can we distinguish between a malignant cancerous cell and a healthy cell based on their image?</strong> <br/>
+										Yes, but it is not easy. <br/>
+										In computational cytology, we often face <em>two challenges</em>: <br/>
+										• <strong>A limited amount of annotated data </strong> that prevents us from using large training cell datasets. <br/>
+										• <strong>Training and testing datasets coming from different sources</strong> (microscope, light, environment, etc.)
+										leading to poor generalisation and bad accuracies.
+									</p>
+									<br/>
+									<p>
+										My task was to build and design a new pipeline that would allow us to overcome these challenges. For that, I used mathematical tools,
+										<strong>supervised and unsupervised machine learning methods</strong> to "re-align" datasets coming from different sources. <br/>
+										Aligning dataset spaces solves both problems at once: we can map the feature
+										representations of only a few annotated samples onto
+										another, potentially much larger, dataset and reliably scale up annotations. <br/>
+										This pipeline greatly improved generalization across data and
+										enhances cell classification results (between <strong>+20% and +50% improved accuracy</strong> depending on the dataset). <br/>
+										On top of that, I deployed the pipeline through a mini web app to help researchers run cell classification tasks.
+									</p>
+									<!-- <ul class="actions">
+										<li><span class="button small disabled">Paper in progress...</span></li>
+									</ul> -->
+
+									<hr />
+
+									<!-- Project 2 -->
+									<h3>CMI Sensors | Kaggle Competition</h3>
+									<p>
+										<span class="image left"><img src="images/cmi_competition_kaggle.png" alt="CMI Sensors Kaggle competition" /></span>
+										A challenge proposed by the <strong>Child Mind Institute</strong> and
+										the <strong>Healthy Brain Network</strong>. The goal was to detect
+										repetitive gesture behaviors from time series sensor data
+										acquired by a wrist-worn device. These behaviors are
+										connected to obsessive-compulsive disorder (OCD), and
+										thus represent key indicators of mental health challenges.
+									</p>
+									<br/>
+									<br/>
+									<p>
+										I designed a 3-branch pipeline with <strong>PyTorch</strong> and <strong>attention mechanisms</strong> to classify gestures.
+										After training, the model achieved an accuracy of <strong>82.8%</strong>, placing me in the <strong>top 10%</strong> of the competition.
+									</p>
+									<p>
+										<strong>Results: 186th out of 2,657 teams</strong>
+									</p>
+									<ul class="actions">
+										<li><a href="https://github.com/misoard/CMISensor" target="_blank" class="button small icon brands fa-github">GitHub Repository</a></li>
+									</ul>
+
+									<hr />
+
+									<!-- Project 3 -->
+									<h3>AI and Quantum Computing</h3>
+									<p>
+										<span class="image left"><img src="images/AI_quantum_computing.jpg" alt="AI and Quantum Computing" /></span>
+										<strong>Is it possible to build a quantum computer with light?</strong> <br/>
+										Yes. <br/>
+										<strong>Is it better than a classical computer?</strong> <br/>
+										In principle, yes! <br/>
+										But, there is a <em>condition</em>: light needs to have a very specific and fundamental property 
+										to quantum physics called <strong><em>entanglement</em></strong>. <br/>
+										However it is very difficult, if not impossible, to detect it experimentally since it relies on data-hungry and computationally expensive methods.
+									</p>
+									<p>
+										The goal of the project was to develop a <strong>neural network pipeline to detect such fundamental property</strong> only from a few experimental data.
+										Indeed, entanglement can be witnessed from correlations patterns that experimentalists can observe from their measurements. And we know that neural networks are excellent at detecting correlations.
+										It was thus tempting to use a neural network to detect such fundamental property. <br/>
+										My role was to supervise the project and work together with a PhD student to develop the pipeline. <br />
+										We obtained excellent and very promising results. 
+										We were impressed by the performance of the neural network at this task reaching more than <strong>95% of accuracy</strong> on the test dataset and <strong>only with four different measurements</strong>.
+										This is a strong milestone in the field of quantum computing and it was awarded by a publication in the prestigious journal Physical Review Letters.
+									</p>
+									<ul class="actions">
+										<li><a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.132.220202" target="_blank" class="button small primary">Read the Paper</a></li>
+									</ul>
+
+								</div>
+
+								<!-- ======================== -->
+								<!-- PERSONAL PROJECTS TAB   -->
+								<!-- ======================== -->
+								<div id="tab-personal" class="tab-content">
+
+									<!-- Personal Project 1 -->
+									<h3>Bringing Sport and AI Together</h3>
+									<div class="row">
+										<div class="col-12">
+											<p>
+												<strong>Can artificial intelligence help us write workout gym notes efficiently to easily track our progress?</strong>
+											</p>
+											<p>
+												This project started with a <strong>personal need</strong>. When I go to the gym, I need to take notes 
+												to track my weights, my reps, my number of sets and my exercises. It is a <strong>must</strong> for anyone 
+												who wants to track their progress and improve their performance. If you do not do it, you won't
+												progress simply because you cannot remember everything from one workout to the next. <br/>
+												However, taking notes can be time-consuming and I never found a good app that would help me do it efficiently.
+												If you download such apps, you will realize that you need to look for specific exercise 
+												and enter all details (reps, weights, sets, ...) manually.  <br/>
+												You cannot really do that when you are at the gym! I don't have time! 
+												I just want to be able to write <em>'Bench press 100x10 4S'</em> (understand: 'I did 4 sets of 10 reps at 100kg') and have it automatically 
+												<strong>converted</strong> to a structured format to be able to track my progress. <br/>
+												<br/>
+												This is what I did and I called my app <strong>FitBoard Training</strong>.
+	
+												
+											</p>
+											<hr />
+
+											<h3>What does the app do?</h3>
+											<div class="row">
+												<div class="col-6 col-12-medium">
+													<h4><span class="icon solid fa-running"></span> &nbsp; Efficient Gym Notes converter</h4>
+													<p>
+														Using 
+													</p>
+												</div>
+												<div class="col-6 col-12-medium">
+													<h4><span class="icon solid fa-calendar"></span> &nbsp; Workout session tracker</h4>
+													<p> 
+														Predictive models 
+													</p>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-6 col-12-medium">
+													<h4><span class="icon solid fa-chart-line"></span> &nbsp; Progress tracker</h4>
+													<p>
+														Real-time and
+													</p>
+												</div>
+			
+											</div>
+			
+			
+											<hr />
+			
+											<h3>Want to try it?</h3>
+											<p>
+												
+											</p>
+											<p>
+												This project is a work in progress. 
+											</p>
+			
+											<hr />
+
+
+
+											<ul class="actions">
+												<li><a href="https://ai-training-dashboard.vercel.app/" target="_blank" class="button small">See the app</a></li>
+												<li><a href="sport-ai.html" class="button primary">Discover more</a></li>
+											</ul>
+										</div>
+									</div>
+
+								</div>
+
+								<hr />
+
+								<ul class="actions">
+									<li><a href="publications.html" class="button primary">View All Publications</a></li>
+									<li><a href="contact.html" class="button">Get in Touch</a></li>
+								</ul>
+
+							</div>
+						</section>
+					</article>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/mathieu-isoard-ml" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/misoard" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://scholar.google.com/citations?user=8bsIOgoAAAAJ&hl=fr" target="_blank" class="icon solid fa-graduation-cap"><span class="label">Google Scholar</span></a></li>
+							<li><a href="mailto:isoard.mathieu@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; 2025 Mathieu Isoard</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<!-- Tab switching -->
+			<script>
+				$(function() {
+					$('.tab-btn').on('click', function(e) {
+						e.preventDefault();
+						var target = $(this).data('tab');
+
+						// Swap button styles: active gets 'primary', others lose it
+						$('.tab-btn').removeClass('primary');
+						$(this).addClass('primary');
+
+						// Toggle tab content
+						$('.tab-content').removeClass('active');
+						$('#tab-' + target).addClass('active');
+					});
+				});
+			</script>
+
+	</body>
+</html>

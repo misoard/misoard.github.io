@@ -1,0 +1,462 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>CV - Mathieu Isoard</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Curriculum Vitae of Mathieu Isoard - PhD physicist and data scientist." />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Tab content toggle */
+			.tab-content {
+				display: none;
+			}
+			.tab-content.active {
+				display: block;
+			}
+
+			/* Header tabs: allow wrapping on small screens */
+			#main > header .actions {
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+
+			/* Timeline */
+			.timeline {
+				position: relative;
+				padding: 0;
+				list-style: none;
+			}
+			.timeline::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 1.5em;
+				width: 3px;
+				background: #dfdfdf;
+			}
+			.timeline-item {
+				position: relative;
+				padding: 0 0 2.5em 4.5em;
+			}
+			.timeline-item:last-child {
+				padding-bottom: 0;
+			}
+			.timeline-dot {
+				position: absolute;
+				left: 0.75em;
+				top: 0.15em;
+				width: 1.5em;
+				height: 1.5em;
+				border-radius: 50%;
+				background: #ed4933;
+				border: 3px solid #fff;
+				box-shadow: 0 0 0 3px #dfdfdf;
+				z-index: 1;
+			}
+			.timeline-date {
+				display: inline-block;
+				font-size: 0.85em;
+				font-weight: 600;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				color: #ed4933;
+				margin-bottom: 0.3em;
+			}
+			.timeline-title {
+				font-size: 1.1em;
+				font-weight: 700;
+				margin-bottom: 0.15em;
+				color: #2E3842;
+			}
+			.timeline-subtitle {
+				font-size: 0.9em;
+				font-style: italic;
+				color: #888;
+				margin-bottom: 0.6em;
+			}
+			.timeline-item ul {
+				margin-top: 0.5em;
+				margin-bottom: 0;
+			}
+			.timeline-item ul li {
+				margin-bottom: 0.3em;
+			}
+			.timeline-item p {
+				margin-bottom: 0.5em;
+			}
+
+			/* Responsive: move timeline line & dot for very small screens */
+			@media screen and (max-width: 480px) {
+				.timeline::before {
+					left: 1em;
+				}
+				.timeline-item {
+					padding-left: 3.5em;
+				}
+				.timeline-dot {
+					left: 0.25em;
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Mathieu Isoard</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="about.html">About</a></li>
+											<li><a href="cv.html">CV</a></li>
+											<li><a href="projects.html">Projects</a></li>
+											<li><a href="publications.html">Publications</a></li>
+											<li><a href="contact.html">Contact</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>Curriculum Vitae</h2>
+							<p>Mathieu Isoard, PhD &mdash; Physicist &amp; Data Scientist</p>
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+
+								<!-- Download CV -->
+								<div class="row">
+									<div class="col-8 col-12-medium">
+										<p>
+											Below is a detailed overview of my professional background.
+											For a printable version, download the PDF.
+										</p>
+									</div>
+									<div class="col-4 col-12-medium">
+										<ul class="actions fit">
+											<li><a href="assets/files/CV_ISOARD.pdf" class="button primary fit icon solid fa-download" target="_blank">Download CV (PDF)</a></li>
+										</ul>
+									</div>
+								</div>
+
+								<!-- Section tabs -->
+								<ul class="actions special">
+									<li><a href="#" class="button primary small tab-btn" data-tab="experience">Experience</a></li>
+									<li><a href="#" class="button small tab-btn" data-tab="education">Education</a></li>
+									<li><a href="#" class="button small tab-btn" data-tab="certifications">Certifications</a></li>
+									<li><a href="#" class="button small tab-btn" data-tab="skills">Skills</a></li>
+									<li><a href="#" class="button small tab-btn" data-tab="interests">Interests</a></li>
+								</ul>
+
+								<hr />
+
+								<!-- ======================== -->
+								<!-- EXPERIENCE               -->
+								<!-- ======================== -->
+								<div id="tab-experience" class="tab-content active">
+
+									<h3><span class="icon solid fa-briefcase"></span> &nbsp; Experience</h3>
+
+									<div class="timeline">
+
+										<!-- CRIION -->
+										<div class="timeline-item">
+											<div class="timeline-dot"></div>
+											<div class="timeline-date">2025</div>
+											<div class="timeline-title">Senior AI Researcher</div>
+											<div class="timeline-subtitle">CRIION (Intelligent Oncology) &mdash; Freiburg, Germany</div>
+											<ul>
+												<li>Led the development of combined supervised and unsupervised ML methods to align heterogeneous single-cell datasets, significantly improving cell annotation accuracy.</li>
+												<li>Translated research into production by building and deploying an end-to-end ML pipeline with a web app (Python, FastAPI, Next.js, Docker), enabling non-ML researchers to run analyses autonomously.</li>
+											</ul>
+										</div>
+
+										<!-- Post-doc LKB -->
+										<div class="timeline-item">
+											<div class="timeline-dot"></div>
+											<div class="timeline-date">2022 &ndash; 2024</div>
+											<div class="timeline-title">Post-doctoral Researcher</div>
+											<div class="timeline-subtitle">LKB, Sorbonne Universit&eacute; &mdash; Quantum Computing Group, Paris, France</div>
+											<ul>
+												<li>Developed data analysis and deep learning methods to extract fundamental properties from noisy experimental data.</li>
+												<li>Designed a deep neural network capable of detecting a key quantum resource for quantum computing from only a few experimental measurements, vastly outperforming existing data-hungry and computationally expensive methods.</li>
+											</ul>
+										</div>
+
+										<!-- Post-doc 2020-2022 -->
+										<div class="timeline-item">
+											<div class="timeline-dot"></div>
+											<div class="timeline-date">2020 &ndash; 2022</div>
+											<div class="timeline-title">Post-doctoral Researcher</div>
+											<div class="timeline-subtitle">Freiburg	University &mdash; Quantum Optics Group, Freiburg, Germany</div>
+											<ul>
+												<li><!-- TODO: fill in description --></li>
+											</ul>
+										</div>
+
+										<!-- PhD -->
+										<div class="timeline-item">
+											<div class="timeline-dot"></div>
+											<div class="timeline-date">2017 &ndash; 2020</div>
+											<div class="timeline-title">PhD Researcher</div>
+											<div class="timeline-subtitle">Paris-Saclay University &mdash; LPTMS, Orsay, France</div>
+											<ul>
+												<li>Uncovered quantum effects in hydrodynamic analog black holes using noisy experimental data.</li>
+												<li>Solved and numerically simulated fundamental hydrodynamic equations, including shock-wave dynamics.</li>
+											</ul>
+										</div>
+
+									</div>
+
+								</div>
+
+								<!-- ======================== -->
+								<!-- EDUCATION                -->
+								<!-- ======================== -->
+								<div id="tab-education" class="tab-content">
+
+									<h3><span class="icon solid fa-graduation-cap"></span> &nbsp; Education</h3>
+
+									<div class="timeline">
+
+										<!-- PhD -->
+										<div class="timeline-item">
+											<div class="timeline-dot"></div>
+											<div class="timeline-date">2017 &ndash; 2020</div>
+											<div class="timeline-title">PhD in Theoretical Physics &amp; Applied Mathematics</div>
+											<div class="timeline-subtitle">Paris-Saclay University</div>
+											<p>
+												Focused on (i) uncovering quantum effects in hydrodynamic analog black holes
+												using noisy experimental data, and (ii) solving and numerically simulating
+												fundamental hydrodynamic equations, including shock-wave dynamics.
+											</p>
+										</div>
+
+										<!-- Master -->
+										<div class="timeline-item">
+											<div class="timeline-dot"></div>
+											<div class="timeline-date">2013 &ndash; 2017</div>
+											<div class="timeline-title">Bachelor &amp; Master Degree</div>
+											<div class="timeline-subtitle">ENS Paris-Saclay (Bachelor) &amp; ENS Ulm (Master, theoretical physics ICFP program)</div>
+											<p>
+												Graduated from two of France's leading Grandes &Eacute;coles with a strong
+												foundation in theoretical physics and mathematics.
+											</p>
+										</div>
+
+									</div>
+
+								</div>
+
+								<!-- ======================== -->
+								<!-- CERTIFICATIONS           -->
+								<!-- ======================== -->
+								<div id="tab-certifications" class="tab-content">
+
+									<h3><span class="icon solid fa-certificate"></span> &nbsp; Certifications</h3>
+
+									<div class="timeline">
+
+										<div class="timeline-item">
+											<div class="timeline-dot"></div>
+											<div class="timeline-date">2026</div>
+											<div class="timeline-title">Microsoft Azure certification &mdash; Ongoing...</div>
+											<!-- <div class="timeline-subtitle"></div> -->
+											<p>
+												<ul>
+												<li>Manage Azure resources for machine learning</li>
+												<li>Run experiments and train models</li>
+												<li>Deploy and operationalize ethical machine learning solutions</li>
+												</ul>
+											</p>
+										</div>
+
+										<div class="timeline-item">
+											<div class="timeline-dot"></div>
+											<div class="timeline-date">2024</div>
+											<div class="timeline-title">XCS224W &mdash; Machine Learning with Graphs</div>
+											<div class="timeline-subtitle">Stanford Online</div>
+											<p>
+												Covered graph neural networks, knowledge graphs, and graph-based
+												machine learning methods for structured data.
+											</p>
+										</div>
+
+									</div>
+
+								</div>
+
+								<!-- ======================== -->
+								<!-- SKILLS                   -->
+								<!-- ======================== -->
+								<div id="tab-skills" class="tab-content">
+
+									<h3><span class="icon solid fa-cogs"></span> &nbsp; Skills</h3>
+
+									<div class="row">
+										<div class="col-6 col-12-medium">
+											<h4>Technical Skills</h4>
+											<ul>
+												<li>Python</li>
+												<li>PyTorch, Scikit-learn, TensorFlow, Keras</li>
+												<li>PyTorch Geometric</li>
+												<li>Pandas, NumPy</li>
+												<li>Docker</li>
+												<li>FastAPI, Next.js</li>
+											</ul>
+										</div>
+										<div class="col-6 col-12-medium">
+											<h4>Expertise</h4>
+											<ul>
+												<li>Machine &amp; Deep Learning</li>
+												<li>Data Analysis &amp; Visualization</li>
+												<li>AI Integration &amp; Deployment</li>
+												<li>Project Management</li>
+												<li>Scientific Computing</li>
+												<li>Communication &amp; Talks</li>
+											</ul>
+										</div>
+									</div>
+
+									<hr />
+
+									<h4>Languages</h4>
+									<div class="row">
+										<div class="col-4 col-12-small">
+											<strong>French</strong> &mdash; C2 (Native)
+										</div>
+										<div class="col-4 col-12-small">
+											<strong>English</strong> &mdash; C1
+										</div>
+										<div class="col-4 col-12-small">
+											<strong>German</strong> &mdash; B1
+										</div>
+									</div>
+
+								</div>
+
+								<!-- ======================== -->
+								<!-- INTERESTS                -->
+								<!-- ======================== -->
+								<div id="tab-interests" class="tab-content">
+
+									<h3><span class="icon solid fa-heart"></span> &nbsp; Interests &amp; Personal Projects</h3>
+
+									<h4><span class="icon solid fa-dumbbell"></span> &nbsp; Sport</h4>
+									<p>
+										Weightlifting and running became a must in my life where I can apply
+										my core beliefs to achieve success: <strong>motivation and self-discipline</strong>.
+									</p>
+
+									<hr />
+
+									<h4><span class="icon solid fa-laptop-code"></span> &nbsp; Personal Projects</h4>
+
+									<div class="row" style="margin-top: 1.5em;">
+										<div class="col-6 col-12-medium">
+											<h5>Wellness Platform</h5>
+											<p>
+												A ready-to-use wellness platform designed for my family,
+												bringing together health tips and practical resources.
+											</p>
+											<ul class="actions">
+												<li><a href="https://www.equilibrecorpsesprit.com" target="_blank" class="button small">Look at the platform</a></li>
+											</ul>
+										</div>
+										<div class="col-6 col-12-medium">
+											<h5>AI Gym Tracker</h5>
+											<p>
+												Design and deployment of an AI-powered mobile app to
+												track gym workout progress and optimize training routines.
+											</p>
+											<ul class="actions">
+												<li><a href="sport-ai.html" class="button small primary">Discover more</a></li>
+
+												<li><a href="https://ai-training-dashboard.vercel.app/" target="_blank" class="button small">Look at the app</a></li>
+											</ul>
+										</div>
+									</div>
+
+									<!-- <hr /> -->
+
+									<!-- <h4><span class="icon solid fa-running"></span> &nbsp; Sport &amp; AI</h4>
+									<p>
+										I am also exploring the intersection of sports analytics and machine learning
+										as a personal passion project.
+									</p>
+									<ul class="actions">
+										<li><a href="sport-ai.html" class="button small primary">Discover: Bringing Sport and AI Together</a></li>
+									</ul> -->
+
+								</div>
+
+								<hr />
+
+								<ul class="actions">
+									<li><a href="assets/files/CV_ISOARD.pdf" class="button primary icon solid fa-download" target="_blank">Download Full CV (PDF)</a></li>
+									<li><a href="publications.html" class="button">View Publications</a></li>
+									<li><a href="contact.html" class="button">Contact Me</a></li>
+								</ul>
+
+							</div>
+						</section>
+					</article>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/mathieu-isoard-ml" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/misoard" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://scholar.google.com/citations?user=8bsIOgoAAAAJ&hl=fr" target="_blank" class="icon solid fa-graduation-cap"><span class="label">Google Scholar</span></a></li>
+							<li><a href="mailto:isoard.mathieu@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; 2025 Mathieu Isoard</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<!-- Tab switching -->
+			<script>
+				$(function() {
+					$('.tab-btn').on('click', function(e) {
+						e.preventDefault();
+						var target = $(this).data('tab');
+
+						// Swap button styles
+						$('.tab-btn').removeClass('primary');
+						$(this).addClass('primary');
+
+						// Toggle tab content
+						$('.tab-content').removeClass('active');
+						$('#tab-' + target).addClass('active');
+					});
+				});
+			</script>
+
+	</body>
+</html>
