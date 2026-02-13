@@ -139,7 +139,7 @@
 							<div class="inner">
 
 								<!-- Download CV -->
-								<div class="row">
+								<!-- <div class="row">
 									<div class="col-8 col-12-medium">
 										<p>
 											Below is a detailed overview of my professional background.
@@ -151,7 +151,7 @@
 											<li><a href="assets/files/CV_ISOARD.pdf" class="button primary fit icon solid fa-download" target="_blank">Download CV (PDF)</a></li>
 										</ul>
 									</div>
-								</div>
+								</div> -->
 
 								<!-- Section tabs -->
 								<ul class="actions special">
@@ -406,9 +406,9 @@
 
 								<hr />
 
-								<ul class="actions">
+								<ul class="actions" style="display: flex; justify-content: center;">
 									<li><a href="assets/files/CV_ISOARD.pdf" class="button primary icon solid fa-download" target="_blank">Download Full CV (PDF)</a></li>
-									<li><a href="publications.html" class="button">View Publications</a></li>
+									<!-- <li><a href="publications.html" class="button">View Publications</a></li> -->
 									<li><a href="contact.html" class="button">Contact Me</a></li>
 								</ul>
 
@@ -454,6 +454,14 @@
 						// Toggle tab content
 						$('.tab-content').removeClass('active');
 						$('#tab-' + target).addClass('active');
+
+						// Scroll to the section title (offset for fixed header)
+						var section = document.getElementById('tab-' + target);
+						if (section) {
+							var headerHeight = document.getElementById('header') ? document.getElementById('header').offsetHeight : 0;
+							var top = section.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+							window.scrollTo({ top: top, behavior: 'smooth' });
+						}
 					});
 				});
 			</script>
